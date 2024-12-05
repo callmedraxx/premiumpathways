@@ -11,13 +11,14 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-black shadow-md z-50">
-      <div className="flex items-center justify-between px-4 py-3 md:px-8">
+      <div className="flex items-center justify-between px-4 py-2 md:px-8">
         {/* Logo */}
         <div className="px-12 py-4">
         <Image src="/img/prem.png" 
         alt="prem logo"
         width={150}
         height={150}
+        className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36"
         
         />
         </div>
@@ -29,17 +30,17 @@ const Header = () => {
           aria-label="Toggle Menu"
         >
           <div
-            className={`w-6 h-0.5 bg-black mb-1 transform transition duration-300 ${
+            className={`w-6 h-0.5 bg-white mb-1 transform transition duration-300 ${
               menuOpen ? "rotate-45 translate-y-1" : "hover:bg-gray-600"
             }`}
           ></div>
           <div
-            className={`w-6 h-0.5 bg-black mb-1 transition duration-300 ${
+            className={`w-6 h-0.5 bg-white mb-1 transition duration-300 ${
               menuOpen ? "opacity-0" : "hover:bg-gray-600"
             }`}
           ></div>
           <div
-            className={`w-6 h-0.5 bg-black transform transition duration-300 ${
+            className={`w-6 h-0.5 bg-white transform transition duration-300 ${
               menuOpen ? "-rotate-45 -translate-y-1" : "hover:bg-gray-600"
             }`}
           ></div>

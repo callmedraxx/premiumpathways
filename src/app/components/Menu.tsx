@@ -62,7 +62,7 @@ const Menu = ({ isMobile, toggleMenu }: MenuProps) => {
   return (
     <nav
       className={`${
-        isMobile ? "flex flex-col bg-white shadow-lg" : "flex space-x-6"
+        isMobile ? "flex flex-col bg-black shadow-lg" : "flex space-x-6"
       }`}
     >
       <ul className={`${isMobile ? "space-y-4 py-4" : "flex"}`}>
