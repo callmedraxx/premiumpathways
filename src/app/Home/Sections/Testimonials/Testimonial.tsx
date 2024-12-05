@@ -6,7 +6,7 @@ import Image from "next/image";
 const Testimonials = () => {
   const testimonials = Array.from({ length: 8 }, (_, i) => ({
     id: i + 1,
-    image: `https://via.placeholder.com/300x300?text=Client+${i + 1}`,
+    image: `/img/grad.jpeg`,
     name: `Client ${i + 1}`,
     review: `This is a wonderful testimonial from Client ${i + 1}. They loved our service and had an amazing experience working with us.`,
   }));
