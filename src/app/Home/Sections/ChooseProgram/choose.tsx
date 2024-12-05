@@ -15,7 +15,7 @@ const ChooseProgram = () => {
       </div>
 
       {/* Image Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-[900px] sm:h-[800px] lg:h-[600px]">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-[900px] sm:h-[800px] lg:h-[600px] rounded-lg">
         {/* Doctor Program - Full Left Side */}
         <Link
           href="/programs/1"
@@ -40,7 +40,7 @@ const ChooseProgram = () => {
           href="/programs/2"
           className="relative md:col-span-2 md:row-span-2 overflow-hidden group"
         >
-          <div className="absolute inset-0 bg-black/40 flex items-end transition-all duration-300 group-hover:bg-black/60">
+          <div className="absolute  inset-0 bg-black/40 flex items-end transition-all duration-300 group-hover:bg-black/60">
             <p className="text-white text-xl font-semibold p-4 z-30">
               Bachelors Program
             </p>

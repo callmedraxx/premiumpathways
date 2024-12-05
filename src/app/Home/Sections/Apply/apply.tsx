@@ -2,7 +2,7 @@
 
 export default function ApplySection() {
   return (
-    <section className="relative bg-cover bg-center text-white py-16 px-4" style={{ backgroundImage: "url('/img/student.jpeg')" }}>
+    <section className="relative bg-cover bg-center text-white py-16 px-4 rounded-lg" style={{ backgroundImage: "url('/img/student.jpeg')" }}>
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
 
