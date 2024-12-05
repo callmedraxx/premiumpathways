@@ -9,48 +9,48 @@ const Menu = ({ isMobile, toggleMenu }: MenuProps) => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   const menuItems = [
-    { href: "#Home", label: "Home" },
+    { href: "/", label: "Home" },
     {
       href: "#Universities",
       label: "Universities",
       submenu: [
-        { href: "#Uni1", label: "Search for Universities" },
-        { href: "#Uni2", label: " University Majors" },
-        { href: "#Uni2", label: "Popular Cities" },
-        { href: "#Uni2", label: "Top Universities" },
+        { href: "Universities/Search/", label: "Search for Universities" },
+        { href: "Universities/Majors/", label: " University Majors" },
+        { href: "Universities/Cities/", label: "Popular Cities" },
+        { href: "Universities/Top/", label: "Top Universities" },
       ],
     },
     {
       href: "#Scholarships",
       label: "Scholarships",
       submenu: [
-        { href: "#Scholarship1", label: "Bachelors Scholarships" },
-        { href: "#Scholarship2", label: "Masters Scholarships" },
-        { href: "#Scholarship2", label: "PhD Scholarships" },
-        { href: "#Scholarship2", label: "Non Degree Scholarships" },
+        { href: "Scholarships/Bachelors/", label: "Bachelors Scholarships" },
+        { href: "Scholarships/Masters/", label: "Masters Scholarships" },
+        { href: "Scholarships/NonD/", label: "PhD Scholarships" },
+        { href: "Scholarships/Phd/", label: "Non Degree Scholarships" },
       ],
     },
     {
       href: "#Services",
       label: "Student Services",
       submenu: [
-        { href: "#Service1", label: "Applying Procedures" },
-        { href: "#Service2", label: "Exclusive Services" },
-        { href: "#Service2", label: "Foreign Student Stories" },
-        { href: "#Service2", label: "FAQ" },
-        { href: "#Service2", label: "Cost Description" },
+        { href: "Services/Procedures/", label: "Applying Procedures" },
+        { href: "Services/Exclusive/", label: "Exclusive Services" },
+        { href: "Services/Stories/", label: "Foreign Student Stories" },
+        { href: "Services/FAQ/", label: "FAQ" },
+        { href: "Services/Cost/", label: "Cost Description" },
       ],
     },
-    { href: "#Tour", label: "Study Tour" },
+    { href: "Tour/", label: "Study Tour" },
     {
       href: "#About",
       label: "About Us",
       submenu: [
-        { href: "#Mission", label: "Contact Us" },
-        { href: "#Team", label: "Exhibition" },
-        { href: "#Service2", label: "Business Cooperation" },
-        { href: "#Service2", label: "Case Study" },
-        { href: "#Service2", label: "Testimonials" },
+        { href: "About/Contact/", label: "Contact Us" },
+        { href: "About/Exhibition/", label: "Exhibition" },
+        { href: "About/Business/", label: "Business Cooperation" },
+        { href: "About/CaseStudy/", label: "Case Study" },
+        { href: "About/Testimonials/", label: "Testimonials" },
       ],
     },
   ];

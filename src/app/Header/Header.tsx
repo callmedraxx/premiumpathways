@@ -14,7 +14,7 @@ const Header = () => {
       <div className="flex items-center justify-between px-4 py-3 md:px-8">
         {/* Logo */}
         <div className="px-12 py-4">
-        <img src="img/prem.png" 
+        <Image src="/img/prem.png" 
         alt="prem logo"
         width={150}
         height={150}

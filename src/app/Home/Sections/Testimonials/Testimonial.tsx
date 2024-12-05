@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const Testimonials = () => {
   const testimonials = Array.from({ length: 8 }, (_, i) => ({
@@ -50,17 +51,19 @@ const Testimonials = () => {
               {/* Testimonial Content */}
               <div className="relative w-40 h-40 mb-6">
                 <div className="rounded-full border-4 border-gray-300 shadow-md overflow-hidden">
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={`Testimonial ${testimonial.id}`}
-                    className="object-cover w-full h-full pointer-events-none select-none"
+                    width={160}
+                    height={160}
+                    className="object-cover pointer-events-none select-none"
                     draggable="false"
                   />
                 </div>
               </div>
               <p className="text-lg font-semibold">{testimonial.name}</p>
               <p className="text-sm text-gray-600 mt-3 italic">
-                "{testimonial.review}"
+                &quot;{testimonial.review}&quot;
               </p>
             </div>
           ))}
@@ -101,3 +104,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+

@@ -1,3 +1,5 @@
+"use client";
+
 const JoinCommunity = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-between bg-gray-100 p-8 rounded-lg shadow-lg">

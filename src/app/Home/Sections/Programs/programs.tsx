@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const Programs = () => {
   const items = Array.from({ length: 10 }, (_, i) => ({
     id: i + 1,
-    image: `https://via.placeholder.com/200?text=Image+${i + 1}`,
+    image: `/img/grad.jpeg`,
     details: {
       university: `University ${i + 1}`,
       major: `Major Name ${i + 1}`,
@@ -58,11 +59,15 @@ const Programs = () => {
                 {/* Item */}
                 <div className="p-4">
                   {/* Image */}
-                  <img
-                    src={item.image}
-                    alt={`Image for ${item.details.university}`}
-                    className="w-full h-40 object-cover mb-4 rounded-lg"
-                  />
+                  <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={`Image for ${item.details.university}`}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-lg"
+                    />
+                  </div>
 
                   {/* Details */}
                   <ul className="space-y-2 text-sm">
@@ -121,5 +126,6 @@ const Programs = () => {
 };
 
 export default Programs;
+
 
 

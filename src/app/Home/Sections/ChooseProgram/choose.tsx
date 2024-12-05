@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image"; // Import the Image component
 
 const ChooseProgram = () => {
   return (
@@ -21,14 +22,16 @@ const ChooseProgram = () => {
           className="relative col-span-2 row-span-4 overflow-hidden group"
         >
           <div className="absolute inset-0 bg-black/40 flex items-end transition-all duration-300 group-hover:bg-black/60">
-            <p className="text-white text-xl font-semibold p-4">
+            <p className="text-white text-xl font-semibold p-4 z-50">
               Doctor Program
             </p>
           </div>
-          <img
+          <Image
             src="/img/doctor.jpeg"
             alt="Doctor Program"
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:z-10"
+            layout="fill"
+            objectFit="cover"
+            className="transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:z-10"
           />
         </Link>
 
@@ -38,14 +41,16 @@ const ChooseProgram = () => {
           className="relative col-span-2 row-span-2 overflow-hidden group"
         >
           <div className="absolute inset-0 bg-black/40 flex items-end transition-all duration-300 group-hover:bg-black/60">
-            <p className="text-white text-xl font-semibold p-4">
+            <p className="text-white text-xl font-semibold p-4 z-50">
               Bachelors Program
             </p>
           </div>
-          <img
+          <Image
             src="/img/grad.jpeg"
             alt="Bachelors Program"
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:z-10"
+            layout="fill"
+            objectFit="cover"
+            className="transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:z-10"
           />
         </Link>
 
@@ -55,14 +60,16 @@ const ChooseProgram = () => {
           className="relative col-span-1 row-span-2 overflow-hidden group"
         >
           <div className="absolute inset-0 bg-black/40 flex items-end transition-all duration-300 group-hover:bg-black/60">
-            <p className="text-white text-xl font-semibold p-4">
+            <p className="text-white text-xl font-semibold p-4 z-50">
               Masters Program
             </p>
           </div>
-          <img
+          <Image
             src="/img/doctors.jpeg"
             alt="Masters Program"
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:z-10"
+            layout="fill"
+            objectFit="cover"
+            className="transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:z-10"
           />
         </Link>
 
@@ -72,14 +79,16 @@ const ChooseProgram = () => {
           className="relative col-span-1 row-span-2 overflow-hidden group"
         >
           <div className="absolute inset-0 bg-black/40 flex items-end transition-all duration-300 group-hover:bg-black/60">
-            <p className="text-white text-xl font-semibold p-4">
+            <p className="text-white text-xl font-semibold p-4 z-50">
               Chinese Program
             </p>
           </div>
-          <img
+          <Image
             src="/img/china.jpeg"
             alt="Chinese Program"
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:z-10"
+            layout="fill"
+            objectFit="cover"
+            className="transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:z-10"
           />
         </Link>
       </div>
@@ -88,5 +97,6 @@ const ChooseProgram = () => {
 };
 
 export default ChooseProgram;
+
 
 

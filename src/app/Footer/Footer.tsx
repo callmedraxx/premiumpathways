@@ -1,24 +1,31 @@
+"use client";
+
+import Image from 'next/image';
+
+
 const Footer = ({ height = "auto" }) => {
   return (
     <footer className="bg-black text-white w-full" style={{ height: height }}>
       {/* Content */}
-      <div className="container  mx-auto px-4 py-8 grid md:grid-cols-3 gap-8 flex items-center justify-center">
+      <div className="container  mx-auto px-2 py-8 grid md:grid-cols-3 gap-8 flex items-center justify-center">
         {/* Business Info */}
-        <div className="ml-10 mr-10">
-          <img
+        <div className="pl-10">
+          <Image
             src="/img/prem.png"
             alt="prem logo"
-            className="mb-4 w-32"
+            className="mb-4"
+            width={200}
+            height={200}
           />
           <p>F/1202, Tower A, Lippo Plaza</p>
           <p>Yizhuang Economic-Tech Development Area</p>
           <p>Beijing, China</p>
-          <p>Phone: +8610-67668899</p>
-          <p>Email: premiumpathways@gmail.com</p>
+          <p>Whatsapp: +1868-318-1079</p>
+          <p>Email: premiumpathways78@gmail.com</p>
         </div>
 
         {/* Important Links */}
-        <div className="mr-10">
+        <div className="ml-10">
           <h3 className="text-lg font-semibold mb-4">Important Links</h3>
           <ul>
             <li>
@@ -45,7 +52,7 @@ const Footer = ({ height = "auto" }) => {
         </div>
 
         {/* Find a City, Store Icons, and Social Media Links */}
-        <div>
+        <div className="ml-10">
           <h3 className="text-lg font-semibold mb-4">Find Cities</h3>
           <ul className="mb-4">
             <li>
@@ -65,14 +72,14 @@ const Footer = ({ height = "auto" }) => {
             </li>
           </ul>
           <div className="flex gap-4">
-            <a href="https://facebook.com">
-              <img src="/img/facebook.png" alt="Facebook" className="w-6" />
+            <a href="#">
+              <Image src="/img/facebook.png" alt="Facebook" width={30} height={30} />
             </a>
-            <a href="https://twitter.com">
-              <img src="/img/twitter.png" alt="Twitter" className="w-6" />
+            <a href="#">
+              <Image src="/img/x.png" alt="Twitter" width={30} height={30} />
             </a>
-            <a href="https://youtube.com">
-              <img src="/img/youtube.png" alt="YouTube" className="w-6" />
+            <a href="#">
+              <Image src="/img/youtube.png" alt="YouTube" width={30} height={30} />
             </a>
           </div>
         </div>

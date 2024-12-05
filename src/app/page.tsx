@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Programs from "./Home/Sections/Programs/programs";
@@ -21,14 +20,14 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 flex flex-col gap-8 p-8 sm:p-20">
         <StudyInChina />
-        {/*<Programs /> */}
+        <Programs />
         <ChooseProgram />
         <ApplySection />
         <PopularCities />
         <Testimonials />
         <JoinCommunity />
         {/* Add WhatsApp Widget */}
-       <WhatsAppWidget phoneNumber="9876543210" message="Hi, I need help!" />
+       <WhatsAppWidget phoneNumber="+18683181079" message="Hi, I will like to Enquire about your Services!" />
       </main>
 
      {/* Footer with adjustable height */}

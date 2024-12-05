@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const WhatsAppWidget = ({ phoneNumber = "1234567890", message = "Hello!" }) => {
+const WhatsAppWidget = ({ phoneNumber = "+18683181079", message = "Hello! I would like to Enquire about your services" }) => {
   // Generate the WhatsApp link
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message
