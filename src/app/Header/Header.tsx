@@ -13,12 +13,12 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full bg-black shadow-md z-50">
       <div className="flex items-center justify-between px-4 py-2 md:px-8">
         {/* Logo */}
-        <div className="px-12 py-4">
+        <div className="px-6 py-2">
         <Image src="/img/prem.png" 
         alt="prem logo"
-        width={150}
-        height={150}
-        className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36"
+        width={120}
+        height={120}
+        className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-32"
         
         />
         </div>

@@ -18,7 +18,7 @@ export default function Home() {
       <Header />
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col gap-8 p-8 sm:p-20">
+      <main className="flex-1 flex flex-col mt-20 gap-8 p-8 sm:p-20">
         <StudyInChina />
         <Programs />
         <ChooseProgram />

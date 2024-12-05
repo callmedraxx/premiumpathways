@@ -15,7 +15,7 @@ const ChooseProgram = () => {
       </div>
 
       {/* Image Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-[600px]">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-[900px] sm:h-[800px] lg:h-[600px]">
         {/* Doctor Program - Full Left Side */}
         <Link
           href="/programs/1"
@@ -97,6 +97,8 @@ const ChooseProgram = () => {
 };
 
 export default ChooseProgram;
+
+
 
 
 
