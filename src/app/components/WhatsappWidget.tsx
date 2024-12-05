@@ -17,10 +17,10 @@ const WhatsAppWidget = ({ phoneNumber = "1234567890", message = "Hello!" }) => {
     >
       {/* Add WhatsApp icon */}
       <Image
-        src="/whatsapp-icon.png" // Replace with your WhatsApp icon
+        src="/img/whatsapp.png" // Replace with your WhatsApp icon
         alt="WhatsApp"
-        width={32}
-        height={32}
+        width={40}
+        height={40}
       />
     </a>
   );
