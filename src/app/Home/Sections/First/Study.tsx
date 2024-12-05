@@ -3,7 +3,7 @@
 const StudyInChina = () => {
   return (
     <section
-      className="w-full h-[700px] pt-28 sm:pt-16 bg-cover bg-center relative text-white"
+      className="w-full h-[800px] pt-28 sm:pt-16 bg-cover bg-center relative text-white"
       style={{
         backgroundImage: "url('/img/study.jpeg')",
       }}
