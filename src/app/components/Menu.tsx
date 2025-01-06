@@ -14,20 +14,20 @@ const Menu = ({ isMobile, toggleMenu }: MenuProps) => {
       href: "#Universities",
       label: "Universities",
       submenu: [
-        { href: "Universities/Search/", label: "Search for Universities" },
-        { href: "Universities/Majors/", label: " University Majors" },
-        { href: "Universities/Cities/", label: "Popular Cities" },
-        { href: "Universities/Top/", label: "Top Universities" },
+        { href: "../Universities/Search", label: "Search for Universities" },
+        { href: "../Universities/Majors", label: " University Majors" },
+        { href: "../Universities/Cities", label: "Popular Cities" },
+        { href: "../Universities/Top", label: "Top Universities" },
       ],
     },
     {
       href: "#Scholarships",
       label: "Scholarships",
       submenu: [
-        { href: "Scholarships/Bachelors/", label: "Bachelors Scholarships" },
-        { href: "Scholarships/Masters/", label: "Masters Scholarships" },
-        { href: "Scholarships/NonD/", label: "PhD Scholarships" },
-        { href: "Scholarships/Phd/", label: "Non Degree Scholarships" },
+        { href: "../Scholarships/Bachelors", label: "Bachelors Scholarships" },
+        { href: "../Scholarships/Masters", label: "Masters Scholarships" },
+        { href: "../Scholarships/Phd", label: "PhD Scholarships" },
+        { href: "../Scholarships/NonD", label: "Non Degree Scholarships" },
       ],
     },
     {

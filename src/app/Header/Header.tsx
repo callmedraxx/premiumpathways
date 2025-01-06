@@ -17,8 +17,8 @@ const Header = () => {
         <Image src="/img/prem.png" 
         alt="prem logo"
         width={120}
-        height={120}
-        className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-32"
+        height={50}
+        className="w-24 h-16 sm:w-32 sm:h-20 md:w-32 md:h-20"
         
         />
         </div>
