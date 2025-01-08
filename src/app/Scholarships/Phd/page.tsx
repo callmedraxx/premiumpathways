@@ -18,6 +18,16 @@ export default function Phd() {
       deadline: "2025/7/30",
     },
     {
+      id: "southwest-university-of-finance-and-economics",
+      image: "/img/full-scholarship-of-a-university-in-beijing21.jpg", // Replace with actual image path
+      university: "Southwest University of Finance and Economics",
+      scholarship: "Full Scholarship program of language program Degree",
+      major: "Chinese",
+      degree: "Language Program",
+      city: "Changsha",
+      deadline: "2025/7/30",
+    },
+    {
       id: "shandong-university-of-technology",
       image: "/img/full-scholarship-of-a-university-in-beijing21.jpg", // Replace with actual image path
       university: "Shandong University of Technology",
