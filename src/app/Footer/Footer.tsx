@@ -2,45 +2,44 @@
 
 import Image from 'next/image';
 
-
 const Footer = ({ height = "auto" }) => {
   return (
-    <footer className="bg-black text-white w-full" style={{ height: height }}>
+    <footer className="bg-gradient-to-r from-black via-gray-900 to-black text-white w-full" style={{ height: height }}>
       {/* Content */}
-      <div className="container  mx-auto px-2 py-8 grid md:grid-cols-3 gap-8 flex items-center justify-center">
+      <div className="container mx-auto px-12 pt-5 grid md:grid-cols-3 gap-12">
         {/* Business Info */}
-        <div className="pl-10">
+        <div>
           <Image
             src="/img/prem.png"
-            alt="prem logo"
-            className="mb-4"
+            alt="Premium Pathways Logo"
+            className="mb-6"
             width={200}
             height={200}
           />
-          <p>F/1202, Tower A, Lippo Plaza</p>
-          <p>Yizhuang Economic-Tech Development Area</p>
-          <p>Beijing, China</p>
-          <p>Whatsapp: +1868-318-1079</p>
-          <p>Email: premiumpathways78@gmail.com</p>
+          <p className="text-sm mb-2">F/1202, Tower A, Lippo Plaza</p>
+          <p className="text-sm mb-2">Yizhuang Economic-Tech Development Area</p>
+          <p className="text-sm mb-2">Beijing, China</p>
+          <p className="text-sm mb-2">WhatsApp: +1868-318-1079</p>
+          <p className="text-sm">Email: <a href="mailto:premiumpathways78@gmail.com" className="hover:text-purple-400 transition">premiumpathways78@gmail.com</a></p>
         </div>
 
         {/* Important Links */}
-        <div className="ml-10">
-          <h3 className="text-lg font-semibold mb-4">Important Links</h3>
-          <ul>
+        <div>
+          <h3 className="text-lg font-bold mb-4">Important Links</h3>
+          <ul className="space-y-2">
             <li>
-              <a href="#about" className="hover:text-purple-400 transition">
+              <a href="../About/Contact" className="hover:text-purple-400 transition">
                 About Us
               </a>
             </li>
             <li>
-              <a href="#services" className="hover:text-purple-400 transition">
-                Services
+              <a href="../Services/FAQ" className="hover:text-purple-400 transition">
+                FAQ
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-purple-400 transition">
-                Contact
+              <a href="../Scholarships/Bachelors" className="hover:text-purple-400 transition">
+                Scholarships
               </a>
             </li>
             <li>
@@ -51,10 +50,10 @@ const Footer = ({ height = "auto" }) => {
           </ul>
         </div>
 
-        {/* Find a City, Store Icons, and Social Media Links */}
-        <div className="ml-10">
-          <h3 className="text-lg font-semibold mb-4">Find Cities</h3>
-          <ul className="mb-4">
+        {/* Find Cities and Social Media */}
+        <div>
+          <h3 className="text-lg font-bold mb-4">Find Us in Cities</h3>
+          <ul className="space-y-2 mb-6">
             <li>
               <a href="#beijing" className="hover:text-purple-400 transition">
                 Beijing
@@ -71,32 +70,35 @@ const Footer = ({ height = "auto" }) => {
               </a>
             </li>
           </ul>
+
+          <h3 className="text-lg font-bold mb-4">Connect With Us</h3>
           <div className="flex gap-4">
-            <a href="#">
+            <a href="#" className="hover:scale-110 transition">
               <Image src="/img/facebook.png" alt="Facebook" width={30} height={30} />
             </a>
-            <a href="#">
+            <a href="#" className="hover:scale-110 transition">
               <Image src="/img/x.png" alt="Twitter" width={30} height={30} />
             </a>
-            <a href="#">
+            <a href="#" className="hover:scale-110 transition">
               <Image src="/img/youtube.png" alt="YouTube" width={30} height={30} />
             </a>
           </div>
         </div>
-
-
-        
       </div>
 
-      {/* Trademark and Copyright */}
-      <div className="text-center mt-8 border-t border-gray-700 pt-4 text-sm">
-        &copy; {new Date().getFullYear()} Premium Pathways. All rights reserved.
+      {/* Divider and Copyright */}
+      <div className=" bg-gray-800 mt-8 border-t border-gray-700">
+        <p className="text-center text-sm py-4">
+          &copy; {new Date().getFullYear()} Premium Pathways. All rights reserved. 
+          <span className="ml-2 text-purple-400 font-semibold">Built with ❤️.</span>
+        </p>
       </div>
     </footer>
   );
 };
 
 export default Footer;
+
 
 
 

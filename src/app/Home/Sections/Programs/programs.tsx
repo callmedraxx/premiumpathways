@@ -4,43 +4,131 @@ import { useState } from "react";
 import Image from "next/image";
 
 const Programs = () => {
-  const items = Array.from({ length: 10 }, (_, i) => ({
-    id: i + 1,
-    image: `/img/grad.jpeg`,
-    details: {
-      university: `University ${i + 1}`,
-      major: `Major Name ${i + 1}`,
-      city: `City ${i + 1}`,
-      language: "English",
-      duration: "4 years",
-      tuition: `$${5000 + i * 100}`,
-      degree: "Bachelor's",
-      start: "September 2024",
-      deadline: "July 2024",
-      serviceFee: `$${200 + i * 10}`,
-      scholarship: "Available",
+  const items = [
+    {
+      id: 1,
+      image: "/img/pp1.png",
+      details: {
+        university: "University A",
+        major: "Computer Science",
+        city: "New York",
+        language: "English",
+        duration: "4 years",
+        tuition: "$20,000",
+        degree: "Bachelor's",
+        start: "September 2024",
+        deadline: "July 2024",
+        serviceFee: "$500",
+        scholarship: "Available",
+      },
     },
-  }));
+    {
+      id: 2,
+      image: "/img/pp2.jpg",
+      details: {
+        university: "University B",
+        major: "Business Administration",
+        city: "Los Angeles",
+        language: "English",
+        duration: "3 years",
+        tuition: "$18,000",
+        degree: "Bachelor's",
+        start: "January 2025",
+        deadline: "October 2024",
+        serviceFee: "$400",
+        scholarship: "Not Available",
+      },
+    },
+    {
+      id: 2,
+      image: "/img/pp3.jpeg",
+      details: {
+        university: "University B",
+        major: "Business Administration",
+        city: "Los Angeles",
+        language: "English",
+        duration: "3 years",
+        tuition: "$18,000",
+        degree: "Bachelor's",
+        start: "January 2025",
+        deadline: "October 2024",
+        serviceFee: "$400",
+        scholarship: "Not Available",
+      },
+    },
+    {
+      id: 2,
+      image: "/img/pp4.jpeg",
+      details: {
+        university: "University B",
+        major: "Business Administration",
+        city: "Los Angeles",
+        language: "English",
+        duration: "3 years",
+        tuition: "$18,000",
+        degree: "Bachelor's",
+        start: "January 2025",
+        deadline: "October 2024",
+        serviceFee: "$400",
+        scholarship: "Not Available",
+      },
+    },
+    {
+      id: 2,
+      image: "/img/pp5.jpg",
+      details: {
+        university: "University B",
+        major: "Business Administration",
+        city: "Los Angeles",
+        language: "English",
+        duration: "3 years",
+        tuition: "$18,000",
+        degree: "Bachelor's",
+        start: "January 2025",
+        deadline: "October 2024",
+        serviceFee: "$400",
+        scholarship: "Not Available",
+      },
+    },
+    {
+      id: 2,
+      image: "/img/pp6.jpeg",
+      details: {
+        university: "University B",
+        major: "Business Administration",
+        city: "Los Angeles",
+        language: "English",
+        duration: "3 years",
+        tuition: "$18,000",
+        degree: "Bachelor's",
+        start: "January 2025",
+        deadline: "October 2024",
+        serviceFee: "$400",
+        scholarship: "Not Available",
+      },
+    },
+    // Add all 24 programs here, with unique information for each program
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const itemsPerView = 3; // Maximum items visible in desktop mode
+  const itemsPerView = 4; // Show 4 items per row on larger screens
 
   const handleNext = () => {
     if (currentIndex + itemsPerView < items.length) {
-      setCurrentIndex(currentIndex + 1);
+      setCurrentIndex(currentIndex + itemsPerView);
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+      setCurrentIndex(currentIndex - itemsPerView);
     }
   };
 
   return (
-    <section className="w-full bg-gray-100 p-8 rounded-lg">
-      <h2 className="text-3xl font-bold text-center mb-6">Available Programs</h2>
+    <section className="w-full text-black bg-gray-100 p-8">
+      <h2 className="text-3xl font-bold  text-center mb-6">Available Programs</h2>
       <div className="w-full overflow-hidden">
         <div className="relative">
           {/* Carousel Wrapper */}
@@ -54,7 +142,7 @@ const Programs = () => {
               <a
                 key={item.id}
                 href={`/details/${item.id}`}
-                className="min-w-full md:min-w-1/3 flex-shrink-0 bg-white border border-gray-200 rounded-lg shadow-lg mx-2 overflow-hidden"
+                className="w-full md:w-1/4 flex-shrink-0 bg-white border border-gray-200 rounded-lg shadow-lg mx-2 overflow-hidden"
               >
                 {/* Item */}
                 <div className="p-4">
@@ -109,16 +197,18 @@ const Programs = () => {
 
         {/* Pagination */}
         <div className="flex justify-center mt-4 space-x-2">
-          {items.map((_, index) => (
-            <span
-              key={index}
-              className={`w-3 h-3 rounded-full ${
-                index === currentIndex
-                  ? "bg-purple-500"
-                  : "bg-gray-400 hover:bg-gray-500"
-              }`}
-            />
-          ))}
+          {Array.from({ length: Math.ceil(items.length / itemsPerView) }).map(
+            (_, index) => (
+              <span
+                key={index}
+                className={`w-3 h-3 rounded-full ${
+                  index === Math.floor(currentIndex / itemsPerView)
+                    ? "bg-purple-500"
+                    : "bg-gray-400 hover:bg-gray-500"
+                }`}
+              />
+            )
+          )}
         </div>
       </div>
     </section>
@@ -126,6 +216,7 @@ const Programs = () => {
 };
 
 export default Programs;
+
 
 
 

@@ -5,7 +5,7 @@ import Footer from "../../Footer/Footer";
 import WhatsAppWidget from "../../components/WhatsappWidget";
 //import { useState } from "react";
 
-export default function Bachelor() {
+export default function Masters() {
   
 
   return (
