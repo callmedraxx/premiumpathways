@@ -15,13 +15,13 @@ const Testimonials = () => {
       id: 2,
       image: "/img/review1.png",
       name: "YEE TAN GUOJING-Malaysia",
-      review: "I'm very happy to know about Premium Pathways. They helped me a lot.",
+      review: "I'm very happy to know about Premium Pathways.",
     },
     {
       id: 3,
       image: "/img/Jidapha-Mangkale-Thailand.png",
       name: "Jidapha Mangkale-Thailand",
-      review: "They made everything so easy and seamless. I'm truly impressed!",
+      review: "They made everything so easy and seamless.I'm impressed!",
     },
     {
       id: 4,
