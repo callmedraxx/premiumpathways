@@ -79,8 +79,13 @@ const Footer = ({ height = "auto" }) => {
             <a href="#" className="hover:scale-110 transition">
               <Image src="/img/x.png" alt="Twitter" width={30} height={30} />
             </a>
-            <a href="#" className="hover:scale-110 transition">
-              <Image src="/img/youtube.png" alt="YouTube" width={30} height={30} />
+            <a
+              href="https://www.instagram.com/premiumpathways1/profilecard/?igsh=MXN0aTR0YmpkbXFtag=="
+              className="hover:scale-110 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src="/img/instagram.png" alt="Instagram" width={30} height={30} />
             </a>
           </div>
         </div>
@@ -98,6 +103,7 @@ const Footer = ({ height = "auto" }) => {
 };
 
 export default Footer;
+
 
 
 

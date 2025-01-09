@@ -143,7 +143,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="text-lg font-semibold">Whatsapp</p>
-                  <p className="text-sm">+86 83181079</p>
+                  <p className="text-sm">+18683181079</p>
                 </div>
               </div>
             </div>

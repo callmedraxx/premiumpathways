@@ -18,7 +18,7 @@ const ChooseProgram = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-[900px] sm:h-[800px] lg:h-[600px] rounded-lg">
         {/* Doctor Program - Full Left Side */}
         <Link
-          href="/programs/1"
+          href="#"
           className="relative md:col-span-2 md:row-span-4 overflow-hidden group"
         >
           <div className="absolute inset-0 bg-black/40 flex items-end transition-all duration-300 group-hover:bg-black/60">
@@ -37,7 +37,7 @@ const ChooseProgram = () => {
 
         {/* Bachelors Program - Top Right */}
         <Link
-          href="/programs/2"
+          href="#"
           className="relative md:col-span-2 md:row-span-2 overflow-hidden group"
         >
           <div className="absolute  inset-0 bg-black/40 flex items-end transition-all duration-300 group-hover:bg-black/60">
@@ -56,7 +56,7 @@ const ChooseProgram = () => {
 
         {/* Masters Program - Bottom Left */}
         <Link
-          href="/programs/3"
+          href="#"
           className="relative md:col-span-1 md:row-span-2 overflow-hidden group"
         >
           <div className="absolute inset-0 bg-black/40 flex items-end transition-all duration-300 group-hover:bg-black/60">
@@ -75,7 +75,7 @@ const ChooseProgram = () => {
 
         {/* Chinese Program - Bottom Right */}
         <Link
-          href="/programs/4"
+          href="#"
           className="relative md:col-span-1 md:row-span-2 overflow-hidden group"
         >
           <div className="absolute inset-0 bg-black/40 flex items-end transition-all duration-300 group-hover:bg-black/60">

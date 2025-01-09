@@ -41,13 +41,13 @@ const Menu = ({ isMobile, toggleMenu }: MenuProps) => {
         { href: "../Services/Cost/", label: "Cost Description" },
       ],
     },
-    { href: "Tour/", label: "Study Tour" },
+    //{ href: "Tour/", label: "Study Tour" },
     {
       href: "#About",
       label: "About Us",
       submenu: [
         { href: "../About/Contact/", label: "Contact Us" },
-        //{ href: "../About/Business/", label: "Business Cooperation" },
+        { href: "../About/Aboutus/", label: "About Us" },
         //{ href: "../About/CaseStudy/", label: "Case Study" },
         { href: "../About/Testimonials/", label: "Testimonials" },
       ],

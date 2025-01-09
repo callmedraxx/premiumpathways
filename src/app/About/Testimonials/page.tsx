@@ -10,49 +10,49 @@ import { useState } from "react";
 export default function Testimonials() {
 
   const testimonials = [
-      {
-        id: 1,
-        image: "/img/thong.jpg",
-        name: "THONG THI DAO-Vietnam",
-        review: "I am from Vietnam. I am currently studying in the second year of my undergraduate degree at Zhejiang Gongshang University.",
-      },
-      {
-        id: 2,
-        image: "/img/review1.png",
-        name: "YEE TAN GUOJING-Malaysia",
-        review: "I'm very happy to know about Premium Pathways. They helped me a lot with my studies and also especially JASON",
-      },
-      {
-        id: 3,
-        image: "/img/Jidapha-Mangkale-Thailand.png",
-        name: "Jidapha Mangkale-Thailand",
-        review: "They made everything so easy and seamless. I'm truly impressed!",
-      },
-      {
-        id: 4,
-        image: "/img/Papitchaya-Kaewtha-Thailand.jpg",
-        name: "Papitchaya Kaewtha-Thailand",
-        review: "A remarkable experience from start to finish. Thank you for everything!",
-      },
-      {
-        id: 5,
-        image: "/img/Nigvaree-Khumsap-Thailand.jpg",
-        name: "Nigvaree Khumsap-Thailand",
-        review: "Friendly, professional, and attentive to every detail. Simply the best!",
-      },
-      {
-        id: 6,
-        image: "/img/Victor-Indonesia.jpg",
-        name: "Victor-Indonesia",
-        review: "Top-notch service! I'll be recommending this to all my friends.",
-      },
-      {
-        id: 7,
-        image: "/img/Cindy-Indonesia.jpg",
-        name: "Cindy Indonesia",
-        review: "Truly exceptional! A heartfelt thanks for making my experience unforgettable.",
-      }
-    ];
+    {
+      id: 1,
+      image: "/img/thong.jpg",
+      name: "THONG THI DAO-Vietnam",
+      review: "It was an unforgettable experience. Thank you.",
+    },
+    {
+      id: 2,
+      image: "/img/review1.png",
+      name: "YEE TAN GUOJING-Malaysia",
+      review: "I'm very happy to know about Premium Pathways. They helped me a lot.",
+    },
+    {
+      id: 3,
+      image: "/img/Jidapha-Mangkale-Thailand.png",
+      name: "Jidapha Mangkale-Thailand",
+      review: "They made everything so easy and seamless. I'm truly impressed!",
+    },
+    {
+      id: 4,
+      image: "/img/Papitchaya-Kaewtha-Thailand.jpg",
+      name: "Papitchaya Kaewtha-Thailand",
+      review: "A remarkable experience from start to finish. Thank you!",
+    },
+    {
+      id: 5,
+      image: "/img/Nigvaree-Khumsap-Thailand.jpg",
+      name: "Nigvaree Khumsap-Thailand",
+      review: "Friendly, professional, and attentive to every detail!",
+    },
+    {
+      id: 6,
+      image: "/img/Victor-Indonesia.jpg",
+      name: "Victor-Indonesia",
+      review: "Top-notch service! I'll recommend this to all my friends.",
+    },
+    {
+      id: 7,
+      image: "/img/Cindy-Indonesia.jpg",
+      name: "Cindy Indonesia",
+      review: "Truly exceptional! Thank you for making my experience unforgettable.",
+    }
+  ];
   
     const [currentIndex, setCurrentIndex] = useState(0);
     const itemsPerView = 1; // One item visible at a time

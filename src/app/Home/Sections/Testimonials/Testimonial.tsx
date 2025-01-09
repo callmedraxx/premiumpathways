@@ -9,13 +9,13 @@ const Testimonials = () => {
       id: 1,
       image: "/img/thong.jpg",
       name: "THONG THI DAO-Vietnam",
-      review: "I am from Vietnam. I am currently studying in the second year of my undergraduate degree at Zhejiang Gongshang University.",
+      review: "It was an unforgettable experience. Thank you.",
     },
     {
       id: 2,
       image: "/img/review1.png",
       name: "YEE TAN GUOJING-Malaysia",
-      review: "I'm very happy to know about Premium Pathways. They helped me a lot with my studies and also especially JASON",
+      review: "I'm very happy to know about Premium Pathways. They helped me a lot.",
     },
     {
       id: 3,
@@ -27,25 +27,25 @@ const Testimonials = () => {
       id: 4,
       image: "/img/Papitchaya-Kaewtha-Thailand.jpg",
       name: "Papitchaya Kaewtha-Thailand",
-      review: "A remarkable experience from start to finish. Thank you for everything!",
+      review: "A remarkable experience from start to finish. Thank you!",
     },
     {
       id: 5,
       image: "/img/Nigvaree-Khumsap-Thailand.jpg",
       name: "Nigvaree Khumsap-Thailand",
-      review: "Friendly, professional, and attentive to every detail. Simply the best!",
+      review: "Friendly, professional, and attentive to every detail!",
     },
     {
       id: 6,
       image: "/img/Victor-Indonesia.jpg",
       name: "Victor-Indonesia",
-      review: "Top-notch service! I'll be recommending this to all my friends.",
+      review: "Top-notch service! I'll recommend this to all my friends.",
     },
     {
       id: 7,
       image: "/img/Cindy-Indonesia.jpg",
       name: "Cindy Indonesia",
-      review: "Truly exceptional! A heartfelt thanks for making my experience unforgettable.",
+      review: "Truly exceptional! Thank you for making my experience unforgettable.",
     }
   ];
 
