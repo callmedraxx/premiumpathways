@@ -20,13 +20,13 @@ export default function Testimonials() {
       id: 2,
       image: "/img/review1.png",
       name: "YEE TAN GUOJING-Malaysia",
-      review: "I'm very happy to know about Premium Pathways. They helped me a lot.",
+      review: "I'm very happy to know about Premium Pathways.",
     },
     {
       id: 3,
       image: "/img/Jidapha-Mangkale-Thailand.png",
       name: "Jidapha Mangkale-Thailand",
-      review: "They made everything so easy and seamless. I'm truly impressed!",
+      review: "They made everything so easy and seamless.I'm impressed!",
     },
     {
       id: 4,
@@ -50,7 +50,7 @@ export default function Testimonials() {
       id: 7,
       image: "/img/Cindy-Indonesia.jpg",
       name: "Cindy Indonesia",
-      review: "Truly exceptional! Thank you for making my experience unforgettable.",
+      review: "Truly exceptional! Thank you for an unforgettable experience.",
     }
   ];
   

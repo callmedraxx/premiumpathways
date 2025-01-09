@@ -45,7 +45,7 @@ const Testimonials = () => {
       id: 7,
       image: "/img/Cindy-Indonesia.jpg",
       name: "Cindy Indonesia",
-      review: "Truly exceptional! Thank you for making my experience unforgettable.",
+      review: "Truly exceptional! Thank you for an unforgettable experience.",
     }
   ];
 

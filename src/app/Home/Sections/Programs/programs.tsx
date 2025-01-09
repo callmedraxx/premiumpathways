@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const Programs = () => {
@@ -128,8 +128,26 @@ const Programs = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(4); // Default for larger screens
 
-  const itemsPerView = 4; // Show 4 items per row on larger screens
+  useEffect(() => {
+    const updateItemsPerView = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerView(1); // Show 1 item per row on mobile screens
+      } else if (window.innerWidth < 1024) {
+        setItemsPerView(2); // Show 2 items per row on tablet screens
+      } else {
+        setItemsPerView(4); // Show 4 items per row on larger screens
+      }
+    };
+
+    // Set initial value
+    updateItemsPerView();
+
+    // Update on window resize
+    window.addEventListener("resize", updateItemsPerView);
+    return () => window.removeEventListener("resize", updateItemsPerView);
+  }, []); // Show 4 items per row on larger screens
 
   const handleNext = () => {
     if (currentIndex + itemsPerView < items.length) {
@@ -150,11 +168,12 @@ const Programs = () => {
         <div className="relative">
           {/* Carousel Wrapper */}
           <div
-            className="flex transition-transform duration-500"
-            style={{
-              transform: `translateX(-${(currentIndex * 100) / itemsPerView}%)`,
-            }}
-          >
+  className="flex transition-transform duration-500"
+  style={{
+    transform: `translateX(-${(currentIndex * 100) / itemsPerView}%)`,
+  }}
+>
+
             {items.map((item) => (
               <a
                 key={item.id}
