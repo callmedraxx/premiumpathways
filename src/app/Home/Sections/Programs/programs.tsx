@@ -177,7 +177,7 @@ const Programs = () => {
             {items.map((item) => (
               <a
                 key={item.id}
-                href={`/details/${item.id}`}
+                href='#'
                 className="w-full md:w-1/4 flex-shrink-0 bg-white border border-gray-200 rounded-lg shadow-lg mx-2 overflow-hidden"
               >
                 {/* Item */}
