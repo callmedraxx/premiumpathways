@@ -125,7 +125,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="text-lg font-semibold">Premium Pathways</p>
-                  <p className="text-sm">123 Beijing Road, Beijing, China</p>
+                  <p className="text-sm">Beijing Road, Beijing, China</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -137,6 +137,26 @@ export default function Contact() {
                   <p className="text-sm">premiumpathways78@gmail.com</p>
                 </div>
               </div>
+              <div className="flex items-center gap-4">
+  <span className="bg-white text-purple-600 rounded-full p-3 shadow-md">
+    <i className="fas fa-envelope"></i>
+  </span>
+  <div>
+    <p className="text-lg font-semibold">Instagram</p>
+    <p className="text-sm font-semibold">
+      <a
+        href="https://www.instagram.com/premiumpathways1/profilecard/?igsh=MXN0aTR0YmpkbXFtag=="
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white hover:underline"
+      >
+        premiumpathways1
+      </a>
+    </p>
+    
+  </div>
+</div>
+
               <div className="flex items-center gap-4">
                 <span className="bg-white text-purple-600 rounded-full p-3 shadow-md">
                   <i className="fab fa-whatsapp"></i>

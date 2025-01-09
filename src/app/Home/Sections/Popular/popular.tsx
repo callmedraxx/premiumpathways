@@ -2,14 +2,14 @@
 
 const PopularCities = () => {
   const cities = [
-    { name: "Beijing", image: "/img/beijing.jpeg", link: "/cities/beijing" },
-    { name: "Shanghai", image: "/img/shangai.jpeg", link: "/cities/shanghai" },
-    { name: "Shenzhen", image: "/img/shenzen.jpg", link: "/cities/shenzhen" },
-    { name: "Chengdu", image: "/img/chengdu.jpeg", link: "/cities/chengdu" },
-    { name: "Guangzhou", image: "/img/guangzhou.jpg", link: "/cities/guangzhou" },
-    { name: "Hangzhou", image: "/img/hangzhou.jpeg", link: "/cities/hangzhou" },
-    { name: "Xi'an", image: "/img/xian.jpeg", link: "/cities/xian" },
-    { name: "Kunming", image: "/img/kunming.jpeg", link: "/cities/kunming" },
+    { name: "Beijing", image: "/img/beijing.jpeg", link: "#" },
+    { name: "Shanghai", image: "/img/shangai.jpeg", link: "#" },
+    { name: "Shenzhen", image: "/img/shenzen.jpg", link: "#" },
+    { name: "Chengdu", image: "/img/chengdu.jpeg", link: "#" },
+    { name: "Guangzhou", image: "/img/guangzhou.jpg", link: "#" },
+    { name: "Hangzhou", image: "/img/hangzhou.jpeg", link: "#" },
+    { name: "Xi'an", image: "/img/xian.jpeg", link: "#" },
+    { name: "Kunming", image: "/img/kunming.jpeg", link: "#" },
   ];
 
   return (
