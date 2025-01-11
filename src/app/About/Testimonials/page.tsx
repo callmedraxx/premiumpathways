@@ -8,49 +8,48 @@ import { useState } from "react";
 //import { useState } from "react";
 
 export default function Testimonials() {
-
   const testimonials = [
     {
       id: 1,
-      image: "/img/thong.jpg",
-      name: "THONG THI DAO-Vietnam",
+      image: "/img/tt1.jpeg",
+      name: "Folagbade - Nigeria",
       review: "It was an unforgettable experience. Thank you.",
     },
     {
       id: 2,
-      image: "/img/review1.png",
-      name: "YEE TAN GUOJING-Malaysia",
+      image: "/img/tt2.jpeg",
+      name: "Kwame - Ghana",
       review: "I'm very happy to know about Premium Pathways.",
     },
     {
       id: 3,
-      image: "/img/Jidapha-Mangkale-Thailand.png",
-      name: "Jidapha Mangkale-Thailand",
+      image: "/img/tt3.jpeg",
+      name: "Jidapha - Morroco",
       review: "They made everything so easy and seamless.I'm impressed!",
     },
     {
       id: 4,
-      image: "/img/Papitchaya-Kaewtha-Thailand.jpg",
-      name: "Papitchaya Kaewtha-Thailand",
+      image: "/img/tt4.jpeg",
+      name: "Catherine - Nigeria",
       review: "A remarkable experience from start to finish. Thank you!",
     },
     {
       id: 5,
-      image: "/img/Nigvaree-Khumsap-Thailand.jpg",
-      name: "Nigvaree Khumsap-Thailand",
+      image: "/img/tt5.jpeg",
+      name: "Appiah - Ghana",
       review: "Friendly, professional, and attentive to every detail!",
     },
     {
       id: 6,
-      image: "/img/Victor-Indonesia.jpg",
-      name: "Victor-Indonesia",
+      image: "/img/tt6.jpeg",
+      name: "Francis - Ghana",
       review: "Top-notch service! I'll recommend this to all my friends.",
     },
     {
       id: 7,
-      image: "/img/Cindy-Indonesia.jpg",
-      name: "Cindy Indonesia",
-      review: "Truly exceptional! Thank you for an unforgettable experience.",
+      image: "/img/tt7.jpeg",
+      name: "Fatima - Nigeria",
+      review: "Truly exceptional! Thank you for this experience.",
     }
   ];
   
