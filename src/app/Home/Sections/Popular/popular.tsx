@@ -1,52 +1,52 @@
 "use client";
 
+import Link from "next/link";
+
 const PopularCities = () => {
   const cities = [
-    { name: "Beijing", image: "/img/beijing.jpeg", link: "#" },
-    { name: "Shanghai", image: "/img/shangai.jpeg", link: "#" },
-    { name: "Shenzhen", image: "/img/shenzen.jpg", link: "#" },
-    { name: "Chengdu", image: "/img/chengdu.jpeg", link: "#" },
-    { name: "Guangzhou", image: "/img/guangzhou.jpg", link: "#" },
-    { name: "Hangzhou", image: "/img/hangzhou.jpeg", link: "#" },
-    { name: "Xi'an", image: "/img/xian.jpeg", link: "#" },
-    { name: "Kunming", image: "/img/kunming.jpeg", link: "#" },
+    { name: "Beijing", image: "/img/beijing.jpeg", link: "/Universities/Cities" },
+    { name: "Shanghai", image: "/img/shangai.jpeg", link: "/Universities/Cities" },
+    { name: "Shenzhen", image: "/img/shenzen.jpg", link: "/Universities/Cities" },
+    { name: "Chengdu", image: "/img/chengdu.jpeg", link: "/Universities/Cities" },
+    { name: "Guangzhou", image: "/img/guangzhou.jpg", link: "/Universities/Cities" },
+    { name: "Hangzhou", image: "/img/hangzhou.jpeg", link: "/Universities/Cities" },
+    { name: "Xi'an", image: "/img/xian.jpeg", link: "/Universities/Cities" },
+    { name: "Kunming", image: "/img/kunming.jpeg", link: "/Universities/Cities" },
   ];
 
   return (
-    <section className="w-full bg-black p-8 rounded-lg">
-      {/* Title and Subtitle */}
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-white">
-          Study or Work in Popular Cities
-        </h2>
-        <p className="text-lg text-white">
-          Discover China’s Vibrant Cities – Eastjuntai and Beyond!
-        </p>
-      </div>
+    <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-16 sm:px-6 md:py-20">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-10 text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Popular cities
+          </h2>
+          <p className="mt-2 max-w-2xl mx-auto text-slate-300">
+            Study or work in vibrant hubs across China — culture, industry, and connectivity.
+          </p>
+        </div>
 
-      {/* Cities Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        {cities.map((city) => (
-          <a
-            key={city.name}
-            href={city.link}
-            className="relative group block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition"
-          >
-            {/* Background Image */}
-            <div
-              className="h-60 w-full bg-cover bg-center"
-              style={{ backgroundImage: `url(${city.image})` }}
-            ></div>
-
-            {/* City Name */}
-            <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white text-lg font-semibold p-3">
-              {city.name}
-            </div>
-
-            {/* Hover Overlay */}
-            <div className="absolute inset-0 bg-purple-600 bg-opacity-0 group-hover:bg-opacity-30 transition"></div>
-          </a>
-        ))}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {cities.map((city) => (
+            <Link
+              key={city.name}
+              href={city.link}
+              className="group relative block aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10"
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-105"
+                style={{ backgroundImage: `url(${city.image})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 w-full p-4">
+                <p className="text-lg font-semibold text-white">{city.name}</p>
+                <p className="text-xs font-medium text-teal-300/90 opacity-0 transition group-hover:opacity-100">
+                  View options →
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );

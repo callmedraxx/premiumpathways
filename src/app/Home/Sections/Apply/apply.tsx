@@ -1,58 +1,62 @@
-"use client"
+"use client";
+
+const steps = [
+  {
+    icon: "fa-handshake",
+    title: "Consultation",
+    body:
+      "One-to-one counseling, 600+ universities, 13 disciplines, 80+ majors, and customized study plans with career context.",
+  },
+  {
+    icon: "fa-file-alt",
+    title: "Application",
+    body:
+      "Material review, matching, translation, scholarship channels, and follow-up through admission and offer delivery.",
+  },
+  {
+    icon: "fa-plane-departure",
+    title: "Pre-departure",
+    body:
+      "Visa guidance, housing, pre-departure briefing, and practical booking support before you travel.",
+  },
+  {
+    icon: "fa-map-marker-alt",
+    title: "When you arrive",
+    body:
+      "Airport pick-up in major cities, school registration, ongoing support, and student community access.",
+  },
+] as const;
 
 export default function ApplySection() {
   return (
-    <section className="relative bg-cover bg-center text-white py-16 px-4 rounded-lg" style={{ backgroundImage: "url('/img/student.jpeg')" }}>
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto text-center">
-        {/* Title */}
-        <h1 className="text-4xl font-bold mb-4">How to Apply</h1>
-
-        {/* Subtopic */}
-        <p className="text-lg sm:text-xl mb-12">
-          See why Premium Pathways is one of the best friends for exploring the city.
+    <section
+      className="relative overflow-hidden py-16 md:py-20"
+      style={{ backgroundImage: "url('/img/student.jpeg')" }}
+    >
+      <div className="absolute inset-0 bg-slate-950/75" />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 text-center text-white sm:px-6">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          How to apply
+        </h2>
+        <p className="mx-auto mt-3 max-w-2xl text-lg text-slate-200">
+          A clear four-step journey from first conversation to life on campus.
         </p>
 
-        {/* Points */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Consultation */}
-          <div className="flex flex-col items-center text-center">
-            <i className="fas fa-handshake text-4xl text-purple-400 mb-4"></i>
-            <h3 className="text-xl font-semibold mb-2">Consultation</h3>
-            <p className="text-sm">
-              One-To-One Counseling Service, 600+ Universities, 13 Disciplines, 80+ Majors, Online 7*24h Feedback, Analysis Of Professional Employment Prospect, Customized Study Plan
-            </p>
-          </div>
-
-          {/* Application */}
-          <div className="flex flex-col items-center text-center">
-            <i className="fas fa-file-alt text-4xl text-purple-400 mb-4"></i>
-            <h3 className="text-xl font-semibold mb-2">Application</h3>
-            <p className="text-sm">
-              Evaluation Of Application Materials, Majors & Universities Matching, 300+ Agreement Universities, 1000+ Scholarship Offers, Exclusive Application Channels, Translation & Optimization Services, No Time Difference, No Language Barrier, Smooth Follow-Up, Mailing Offer
-            </p>
-          </div>
-
-          {/* Pre-departure Preparation */}
-          <div className="flex flex-col items-center text-center">
-            <i className="fas fa-plane-departure text-4xl text-purple-400 mb-4"></i>
-            <h3 className="text-xl font-semibold mb-2">Pre-departure Preparation</h3>
-            <p className="text-sm">
-              Visa Guidance, Accommodation Booking, Pre-Departure Preparation Briefing, Pick-Up & Currency Exchange Booking
-            </p>
-          </div>
-
-          {/* When You Arrive in China */}
-          <div className="flex flex-col items-center text-center">
-            <i className="fas fa-map-marker-alt text-4xl text-purple-400 mb-4"></i>
-            <h3 className="text-xl font-semibold mb-2">When You Arrive in China</h3>
-            <p className="text-sm">
-              Pick-Up Service In Airports Of Big Cities, Registration In School And Dormitory, Home-School Communication, Automated Membership Privileges (I.E., Participating In Activities Of International Students Free Of Charge, And Giving Priority To Job Opportunities Etc.)
-            </p>
-          </div>
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+          {steps.map((step) => (
+            <div
+              key={step.title}
+              className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-md transition hover:border-teal-400/30 hover:bg-white/[0.07]"
+            >
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300">
+                <i className={`fas ${step.icon} text-2xl`} aria-hidden />
+              </div>
+              <h3 className="text-lg font-semibold text-white">{step.title}</h3>
+              <p className="mt-2 text-left text-sm leading-relaxed text-slate-300 sm:text-center">
+                {step.body}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -12,7 +12,7 @@ const WhatsAppWidget = ({ phoneNumber = "+18683181079", message = "Hello! I woul
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 left-4 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg flex items-center justify-center z-50 transition"
+      className="fixed bottom-5 left-5 z-50 flex items-center justify-center rounded-2xl bg-[#25D366] p-3 text-white shadow-lg shadow-slate-900/25 transition hover:bg-[#20bd5a] hover:shadow-xl"
       aria-label="Chat on WhatsApp"
     >
       {/* Add WhatsApp icon */}

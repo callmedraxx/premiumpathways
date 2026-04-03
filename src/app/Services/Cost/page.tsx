@@ -34,8 +34,8 @@ export default function Cost() {
         <section className=" mt-8 flex flex-col sm:flex-row-reverse items-center py-20 bg-cover bg-center bg-gradient-to-r from-teal-600 to-green-700 text-white mb-12">
           <div className="flex-1 text-center sm:text-left px-4 sm:px-8">
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">Service Fee</h1>
-            <p>When you first apply through Premium Pathways online admission system, JTRH will provide you one-to-one consultation, previewing your application success rate, employment direction information of major you want to choose etc.</p>
-            <p>We’ll charge different service fee depend on different package you choose. You can apply for up to 3 universities after the payment of this fee. The service fee is collected to maintain and update JTRH online system as well as offering students’ supporting services.</p>
+            <p>When you first apply through Premium Pathways online admission system, Premium Pathways will provide you one-to-one consultation, previewing your application success rate, employment direction information of major you want to choose etc.</p>
+            <p>We’ll charge different service fee depend on different package you choose. You can apply for up to 3 universities after the payment of this fee. The service fee is collected to maintain and update Premium Pathways online system as well as offering students’ supporting services.</p>
           </div>
           <div className="flex-1 sm:flex-shrink-0 mt-8 sm:mt-0 sm:mr-8">
             <Image
@@ -51,8 +51,8 @@ export default function Cost() {
         <section className="flex flex-col sm:flex-row items-center py-20 bg-gradient-to-r from-indigo-600 to-pink-600 text-white mb-12">
           <div className="flex-1 sm:flex-shrink-0 mt-8 sm:mt-0 sm:mr-8 px-4 sm:px-8 text-center sm:text-left">
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">University Fee</h1>
-            <p>The application fee is charged by the universities. Generally, the application fee of one university is between 60 USD and 120 USD depending on university and program. Students have to pay the application fee for university’s processing work.</p>
-            <p>Premium Pathways is responsible for collecting the application fee for universities based on the agreement with Chinese Universities. Chinese universities mostly accept payment in RMB, and JTRH will help you convert the foreign exchange to the university.</p>
+            <p>The application fee is charged by the universities. Generally, the application fee of one university is between 100 USD and 200 USD depending on university and program. Students have to pay the application fee for university’s processing work.</p>
+            <p>Premium Pathways is responsible for collecting the application fee for universities based on the agreement with Chinese Universities. Chinese universities mostly accept payment in RMB, and Premium Pathways will help you convert the foreign exchange to the university.</p>
           </div>
           <div className="flex-1 sm:flex-shrink-0 mt-8 sm:mt-0 sm:ml-8">
             <Image
@@ -65,22 +65,22 @@ export default function Cost() {
           </div>
         </section>
 
-        {/* JTRH Service Package Table */}
+        {/* Premium Pathways Service Package Table */}
         <section className="py-20 px-4 bg-gray-100 text-black">
-          <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12">JTRH Service Package</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12">Premium Pathways Service Package</h1>
           
           <div className="overflow-x-auto">
             <table className="min-w-full table-auto bg-white rounded-lg shadow-lg">
               <thead>
                 <tr className="bg-teal-600 text-white">
-                  <th className="py-3 px-6">JTRH Standard Package A</th>
-                  <th className="py-3 px-6">JTRH Standard Package B</th>
+                  <th className="py-3 px-6">Premium Pathways Standard Package A</th>
+                  <th className="py-3 px-6">Premium Pathways Standard Package B</th>
                 </tr>
               </thead>
               <tbody className="text-center">
                 <tr>
-                  <td className="py-3 px-6">Service Fee 800USD</td>
-                  <td className="py-3 px-6">Service Fee 500USD</td>
+                  <td className="py-3 px-6">Service Fee 1200 USD</td>
+                  <td className="py-3 px-6">Service Fee 1000 USD</td>
                 </tr>
                 <tr className="bg-gray-50">
                   <td className="py-3 px-6">Customized study plan – 5 schools recommended</td>
@@ -149,8 +149,8 @@ export default function Cost() {
 
         <section className="flex flex-col sm:flex-row-reverse items-center py-20 bg-cover bg-center bg-gradient-to-r from-blue-600 to-purple-700 text-white mb-12">
           <div className="flex-1 text-center sm:text-left px-4 sm:px-8">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6">JTRH Reminder</h1>
-            <p>Apart from universities’ application, JTRH will also offer you the following services included in service fee:</p>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-6">Premium Pathways Reminder</h1>
+            <p>Apart from universities’ application, Premium Pathways will also offer you the following services included in service fee:</p>
             <ul className="list-disc text-lg sm:text-xl max-w-2xl mx-auto sm:mx-0">
             <li>Tracking application process</li>
               <li>Mailing admission notice</li>
@@ -175,13 +175,13 @@ export default function Cost() {
 
         <section className="flex flex-col sm:flex-row items-center py-20 bg-gradient-to-r from-indigo-600 to-pink-600 text-white mb-12">
           <div className="flex-1 sm:flex-shrink-0 mt-8 sm:mt-0 sm:mr-8 px-4 sm:px-8 text-center sm:text-left">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6">JTRH Refund Policy</h1>
-            <p>The application fee is charged by the universities. Generally, the application fee of one university is between 60 USD and 120 USD depending on university and program. Students have to pay the application fee for university’s processing work.</p>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-6">Premium Pathways Refund Policy</h1>
+            <p>The application fee is charged by the universities. Generally, the application fee of one university is between 100 USD and 200 USD depending on university and program. Students have to pay the application fee for university’s processing work.</p>
             <ul className="list-disc text-lg sm:text-xl max-w-2xl mx-auto sm:mx-0">
             <li>University’s application fee once paid is non-refundable at any time</li>
             <li>90% amount of service fee is refundable within 24 hours after you have made the full payment</li>
             <li>50% amount of service fee is refundable if your application has already been processed. About your application status please contacted with our consultant</li>
-            <li>100% amount of JTRH Plus Package Fee is refundable if the admission status of the student is refused, or we’ll offer you freely one application service</li>
+            <li>100% amount of Premium Pathways Plus Package Fee is refundable if the admission status of the student is refused, or we’ll offer you freely one application service</li>
             <li>30% amount of service fee is refundable if the student failed to get a visa after applying to the embassy for 3 times</li>
             <li>No amount is refundable once the student has been admitted by university</li>
             <li>No amount is refundable if the applicant submit fake materials or information</li>

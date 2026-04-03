@@ -18,7 +18,7 @@ export default function Home() {
       <Header />
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col mt-20 ">
+      <main className="flex flex-1 flex-col">
         <StudyInChina />
         <Programs />
         <ChooseProgram />
