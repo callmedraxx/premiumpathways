@@ -107,11 +107,6 @@ const Footer = ({ className = "" }: FooterProps) => {
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <Link href="/Universities/Search" className="text-slate-300 transition hover:text-white">
-                  Search universities
-                </Link>
-              </li>
-              <li>
                 <Link href="/Universities/Top" className="text-slate-300 transition hover:text-white">
                   Top universities
                 </Link>
@@ -136,7 +131,7 @@ const Footer = ({ className = "" }: FooterProps) => {
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <Link href="/Scholarships/Bachelors" className="text-slate-300 transition hover:text-white">
+                <Link href="/Scholarships/Phd" className="text-slate-300 transition hover:text-white">
                   Scholarships
                 </Link>
               </li>

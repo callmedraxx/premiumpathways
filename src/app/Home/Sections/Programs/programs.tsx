@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Animate from "../../../components/Animate";
 
 const Programs = () => {
   const items = [
@@ -182,7 +183,7 @@ const Programs = () => {
       />
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="mb-12 text-center">
+        <Animate variant="fade-up" className="mb-12 text-center">
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-teal-300/90">
             Explore options
           </p>
@@ -192,7 +193,7 @@ const Programs = () => {
           <p className="mx-auto mt-3 max-w-2xl text-base text-slate-400 sm:text-lg">
             Featured pathways — swipe or use the arrows to compare universities, intakes, and support.
           </p>
-        </div>
+        </Animate>
 
         <div className="relative min-h-[28rem] overflow-visible sm:min-h-[26rem]">
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/40 py-2 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] backdrop-blur-sm md:py-3">
@@ -205,7 +206,7 @@ const Programs = () => {
               {items.map((item) => (
                 <Link
                   key={item.id}
-                  href="/Universities/Search"
+                  href="/Scholarships/NonD"
                   className="w-full flex-shrink-0 px-2 md:w-1/2 lg:w-1/4"
                 >
                   <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] shadow-lg transition hover:border-teal-400/35 hover:from-white/[0.1] hover:shadow-teal-950/20">
@@ -347,7 +348,7 @@ const Programs = () => {
 
         <p className="mt-6 text-center text-sm text-slate-500">
           <Link
-            href="/Universities/Search"
+            href="/Scholarships/NonD"
             className="font-medium text-teal-400/90 underline-offset-4 transition hover:text-teal-300 hover:underline"
           >
             Search all programs

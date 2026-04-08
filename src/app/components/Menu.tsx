@@ -14,7 +14,6 @@ const Menu = ({ isMobile, toggleMenu }: MenuProps) => {
       href: "#Universities",
       label: "Universities",
       submenu: [
-        { href: "/Universities/Search", label: "Search for universities" },
         { href: "/Universities/Majors", label: "University majors" },
         { href: "/Universities/Cities", label: "Popular cities" },
         { href: "/Universities/Top", label: "Top universities" },
@@ -24,8 +23,6 @@ const Menu = ({ isMobile, toggleMenu }: MenuProps) => {
       href: "#Scholarships",
       label: "Scholarships",
       submenu: [
-        { href: "/Scholarships/Bachelors", label: "Bachelors scholarships" },
-        { href: "/Scholarships/Masters", label: "Masters scholarships" },
         { href: "/Scholarships/Phd", label: "PhD scholarships" },
         { href: "/Scholarships/NonD", label: "Non-degree scholarships" },
       ],
