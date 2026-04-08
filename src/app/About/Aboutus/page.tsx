@@ -50,7 +50,7 @@ export default function AboutUs() {
             </Animate>
             <Animate variant="fade-up" delay={340}>
               <p className="mx-auto mt-4 max-w-xl text-slate-300">
-                Your trusted partner in educational consultation — bridging students worldwide with China's finest universities.
+                Your trusted partner in educational consultation — bridging students worldwide with China&apos;s finest universities.
               </p>
             </Animate>
           </div>

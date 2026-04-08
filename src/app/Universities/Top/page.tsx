@@ -4,7 +4,7 @@ import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import WhatsAppWidget from "../../components/WhatsappWidget";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Animate from "../../components/Animate";
 
@@ -159,7 +159,7 @@ const cscList = [
 
 const ITEMS_PER_PAGE = 8;
 
-export default function TopUniversities() {
+function TopUniversitiesInner() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [page, setPage] = useState(1);
@@ -202,7 +202,7 @@ export default function TopUniversities() {
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-400">QS World Rankings</p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Top Universities</h1>
             <p className="mx-auto mt-4 max-w-xl text-slate-300">
-              China is home to some of the world's highest-ranked institutions — explore the best and find your fit.
+              China is home to some of the world&apos;s highest-ranked institutions — explore the best and find your fit.
             </p>
           </div>
         </section>
@@ -212,7 +212,7 @@ export default function TopUniversities() {
           <div className="mx-auto max-w-5xl">
             <div className="mb-10 text-center">
               <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">QS Rankings</p>
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">China's Global Standing</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">China&apos;s Global Standing</h2>
               <p className="mt-3 text-slate-400">33 Chinese universities are included in the QS Global Top 400.</p>
             </div>
             <div className="overflow-x-auto rounded-2xl border border-white/10">
@@ -418,7 +418,7 @@ export default function TopUniversities() {
               <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">Government Programs</p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Project 211 & Project 985</h2>
               <p className="mt-3 max-w-2xl mx-auto text-slate-400">
-                China's two flagship government initiatives designating elite universities for additional funding and development.
+                China&apos;s two flagship government initiatives designating elite universities for additional funding and development.
               </p>
             </div>
             <div className="grid gap-6 lg:grid-cols-2">
@@ -522,5 +522,13 @@ export default function TopUniversities() {
       <WhatsAppWidget phoneNumber="+18683181079" message="Hi, I would like to enquire about your services!" />
       <Footer height="300px" />
     </div>
+  );
+}
+
+export default function TopUniversities() {
+  return (
+    <Suspense fallback={null}>
+      <TopUniversitiesInner />
+    </Suspense>
   );
 }

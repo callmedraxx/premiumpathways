@@ -153,7 +153,7 @@ export default function Cost() {
               </h2>
               <div className="mt-5 space-y-4 text-slate-300 leading-relaxed">
                 <p>
-                  The application fee is charged directly by the universities. Generally it falls between <span className="text-white font-semibold">$100 – $200 USD</span> per university, depending on the institution and program. Students are required to pay this fee to cover the university's processing work.
+                  The application fee is charged directly by the universities. Generally it falls between <span className="text-white font-semibold">$100 – $200 USD</span> per university, depending on the institution and program. Students are required to pay this fee to cover the university&apos;s processing work.
                 </p>
                 <p>
                   Premium Pathways collects application fees on behalf of universities under formal agreements. Since Chinese universities primarily accept payment in RMB, we handle all foreign-exchange conversion on your behalf.
@@ -168,7 +168,7 @@ export default function Cost() {
           <div className="mx-auto max-w-5xl">
             <Animate variant="fade-up" className="mb-12 text-center">
               <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">
-                What's Included
+                What&apos;s Included
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Service Packages

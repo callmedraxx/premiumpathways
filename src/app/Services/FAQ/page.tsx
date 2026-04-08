@@ -143,7 +143,7 @@ export default function FAQ() {
                 Still have questions?
               </h2>
               <p className="text-lg text-slate-300">
-                Our advisors are happy to walk you through anything — reach out and we'll get back to you promptly.
+                Our advisors are happy to walk you through anything — reach out and we&apos;ll get back to you promptly.
               </p>
             </Animate>
             <Animate variant="fade-right" delay={150}>
