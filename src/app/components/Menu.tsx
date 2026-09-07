@@ -1,116 +1,72 @@
-import { useState } from "react";
+"use client";
+
+import Link from "next/link";
+
+import { NAV } from "../lib/nav";
+
 
 interface MenuProps {
   isMobile: boolean;
   toggleMenu?: () => void;
 }
 
+/* Desktop: hover and keyboard-focus dropdowns, no click state to get stuck.
+   Mobile: the whole map at once, grouped, because a phone menu that needs
+   three taps to reach "Contact" is a phone menu nobody finishes. */
 const Menu = ({ isMobile, toggleMenu }: MenuProps) => {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
-
-  const menuItems = [
-    { href: "/", label: "Home" },
-    {
-      href: "#Universities",
-      label: "Universities",
-      submenu: [
-        { href: "/Universities/Majors", label: "University majors" },
-        { href: "/Universities/Cities", label: "Popular cities" },
-        { href: "/Universities/Top", label: "Top universities" },
-      ],
-    },
-    {
-      href: "#Scholarships",
-      label: "Scholarships",
-      submenu: [
-        { href: "/Scholarships/Phd", label: "PhD scholarships" },
-        { href: "/Scholarships/NonD", label: "Non-degree scholarships" },
-      ],
-    },
-    {
-      href: "#Services",
-      label: "Student services",
-      submenu: [
-        { href: "/Services/Procedures", label: "Applying procedures" },
-        { href: "/Services/FAQ", label: "FAQ" },
-        { href: "/Services/Cost", label: "Cost description" },
-      ],
-    },
-    {
-      href: "#About",
-      label: "About us",
-      submenu: [
-        { href: "/About/Contact", label: "Contact us" },
-        { href: "/About/Aboutus", label: "About us" },
-        { href: "/About/Testimonials", label: "Testimonials" },
-      ],
-    },
-  ];
-
-  const toggleSubMenu = (label: string) => {
-    setActiveMenu(activeMenu === label ? null : label);
-  };
-
-  return (
-    <nav
-      className={`${
-        isMobile ? "flex flex-col border-t border-white/10 bg-slate-950" : "flex space-x-1 lg:space-x-2"
-      }`}
-    >
-      <ul className={`${isMobile ? "space-y-0 py-2" : "flex items-center"}`}>
-        {menuItems.map((item) => (
-          <li key={item.href} className="relative group">
-            <div
-              className={`flex items-center justify-between ${
-                isMobile
-                  ? "w-full px-4 py-3 hover:bg-white/5"
-                  : "rounded-lg px-3 py-2 hover:bg-white/10"
-              } cursor-pointer transition`}
-              onClick={
-                item.submenu ? () => toggleSubMenu(item.label) : toggleMenu
-              }
-            >
-              <a
-                href={item.href}
-                className="flex-grow text-sm font-medium text-white/90 transition hover:text-white"
-                onClick={item.submenu ? (e) => e.preventDefault() : toggleMenu}
-              >
-                {item.label}
-              </a>
-              {item.submenu && (
-                <i
-                  className={`fas fa-chevron-down ml-1 text-xs text-slate-400 transition-transform ${
-                    activeMenu === item.label ? "rotate-180" : ""
-                  }`}
-                />
-              )}
-            </div>
-
-            {item.submenu && activeMenu === item.label && (
-              <ul
-                className={`${
-                  isMobile
-                    ? "space-y-0 border-l-2 border-gold-500/50 py-1 pl-2 ml-4 my-1"
-                    : "absolute left-0 top-full z-[60] mt-1 min-w-[14rem] overflow-hidden rounded-xl border border-slate-200/80 bg-white py-1 shadow-xl shadow-slate-900/10"
-                }`}
-              >
-                {item.submenu.map((subItem) => (
-                  <li key={subItem.href}>
-                    <a
-                      href={subItem.href}
-                      className={`block px-4 py-2.5 text-sm transition ${
-                        isMobile
-                          ? "text-slate-300 hover:text-gold-300"
-                          : "text-slate-700 hover:bg-gold-50 hover:text-gold-800"
-                      }`}
-                      onClick={toggleMenu}
-                    >
-                      {subItem.label}
-                    </a>
+  if (isMobile) {
+    return (
+      <nav aria-label="Main" className="px-5 pb-8 pt-2">
+        <Link href="/" onClick={toggleMenu} className="block py-3 font-display text-2xl font-semibold text-chalk">
+          Home
+        </Link>
+        <div className="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {NAV.map((g) => (
+            <div key={g.label}>
+              <p className="meta mb-2">{g.label}</p>
+              <ul className="divide-y divide-chalk/10">
+                {g.items.map((it) => (
+                  <li key={it.href}>
+                    <Link href={it.href} onClick={toggleMenu} className="block py-3 text-lg text-chalk/90 transition hover:text-ember">
+                      {it.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
-            )}
+            </div>
+          ))}
+        </div>
+        <Link href="/About/Contact" onClick={toggleMenu} className="btn-ember mt-8 w-full">
+          Talk to an advisor
+        </Link>
+      </nav>
+    );
+  }
+
+  return (
+    <nav aria-label="Main">
+      <ul className="flex items-center gap-1">
+        {NAV.map((g) => (
+          <li key={g.label} className="group relative">
+            <button
+              type="button"
+              className="flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[0.92rem] font-medium text-chalk/85 transition hover:bg-chalk/[0.06] hover:text-chalk group-focus-within:bg-chalk/[0.06]"
+              aria-haspopup="true"
+            >
+              {g.label}
+              <i className="fas fa-chevron-down text-[9px] text-chalk/45 transition group-hover:rotate-180" aria-hidden />
+            </button>
+            <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition duration-200 ease-out group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <ul className="panel-solid min-w-[14rem] p-1.5 shadow-lift">
+                {g.items.map((it) => (
+                  <li key={it.href}>
+                    <Link href={it.href} className="block rounded-xl px-3.5 py-2.5 text-sm text-chalk/85 transition hover:bg-chalk/[0.06] hover:text-chalk">
+                      {it.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </li>
         ))}
       </ul>

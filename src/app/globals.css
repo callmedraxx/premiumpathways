@@ -2,145 +2,123 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   PREMIUM PATHWAYS: the night flight
+
+   One ground, one text colour, one accent. The page is dark by decision, not
+   by category: the whole homepage is a night flight from Lagos to Beijing and
+   every surface is lit like a cabin. Ember is the only colour that is allowed
+   to be loud, and it is spent on the route, the aircraft, and the one button
+   that matters.
+   ============================================================ */
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #06080f;
+  --foreground: #f2eee6;
+  --night: 225 43% 4%;
+  --night-2: 224 43% 7%;
+  --night-3: 224 39% 11%;
+  --chalk: 40 32% 93%;
+  --chalk-soft: 40 10% 76%;
+  --chalk-dim: 240 3% 56%;
+  --ember: 21 100% 62%;
+  --ember-deep: 17 90% 56%;
+  color-scheme: dark;
 }
 
 html {
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--ember) / 0.55) transparent;
+  -webkit-text-size-adjust: 100%;
 }
-
-html::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
+html::-webkit-scrollbar { width: 8px; }
+html::-webkit-scrollbar-track { background: hsl(var(--night)); }
+html::-webkit-scrollbar-thumb { background: hsl(var(--night-3)); border: 2px solid hsl(var(--night)); border-radius: 8px; }
+html::-webkit-scrollbar-thumb:hover { background: hsl(var(--ember) / 0.7); }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  background: hsl(var(--night));
+  color: hsl(var(--chalk));
+  font-feature-settings: "ss01", "cv11";
+  caret-color: hsl(var(--ember));
 }
+::selection { background: hsl(var(--ember)); color: hsl(var(--night)); }
+:focus-visible { outline: 2px solid hsl(var(--ember)); outline-offset: 3px; border-radius: 4px; }
+a { text-underline-offset: 0.2em; }
+img { user-select: none; }
 
-.header {
-  --background: #080221;
-}
+.font-display { font-family: var(--font-display), var(--font-sans), system-ui, sans-serif; }
 
-.university-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
+/* Legacy classes the inner pages still call. Same names, new world. */
+.header { --background: #06080f; }
+.u-eyebrow { font-family: var(--font-mono), monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: hsl(var(--ember)); }
+.u-rule-gold { height: 2px; width: 3rem; background: hsl(var(--ember)); }
+.glass { background: hsl(var(--night-2) / 0.7); border: 1px solid hsl(var(--chalk) / 0.08); backdrop-filter: blur(14px); }
 
-.university-card {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  background-color: #f9f9f9;
-}
-
-.university-image {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.university-info {
-  margin-top: 10px;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.pagination button {
-  margin: 0 5px;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.pagination button:disabled {
-  background-color: #ccc;
-}
-
-.pagination button.active {
-  background-color: #0056b3;
-}
-
-@media (max-width: 768px) {
-  .university-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ============================================================
-   PREMIUM PATHWAYS — 2026 makeover design layer
-   A study-abroad decision is high-trust and high-cost, so the world is
-   institutional and warm: deep academic navy, ivory reading surfaces, a single
-   warm-gold accent (prestige, seals, degrees), an editorial serif over a clean
-   grotesk. The techy teal is retired to one legacy-support role.
-   ============================================================ */
-:root {
-  --navy: 230 60% 7%;          /* #070b1c-ish ground */
-  --navy-2: 231 45% 11%;       /* raised panels on navy */
-  --navy-line: 231 30% 22%;
-  --ivory: 40 40% 95%;         /* #f6f1e7 reading sections */
-  --ivory-2: 38 32% 90%;
-  --ink: 230 35% 11%;          /* text on ivory */
-  --ink-soft: 230 12% 34%;
-  --gold: 40 60% 52%;          /* #c79a3e single accent */
-  --gold-soft: 40 68% 66%;
-  --chalk: 40 30% 95%;         /* text on navy */
-  --fog: 225 15% 68%;          /* secondary text on navy */
-  --fog-deep: 226 14% 46%;
-}
-
-.font-display { font-family: var(--font-display), Georgia, serif; }
-
-body { background: hsl(var(--navy)); color: hsl(var(--chalk)); }
-
-/* Bring the scrollbar back but style it — the old CSS hid it entirely, which
-   loses the reader's sense of position on a long page. */
-html { scrollbar-width: thin; scrollbar-color: hsl(var(--gold)/0.5) transparent; }
-html::-webkit-scrollbar { display: block; width: 9px; }
-html::-webkit-scrollbar-track { background: hsl(var(--navy)); }
-html::-webkit-scrollbar-thumb { background: hsl(var(--navy-line)); border: 2px solid hsl(var(--navy)); border-radius: 9px; }
-html::-webkit-scrollbar-thumb:hover { background: hsl(var(--gold)/0.7); }
-::selection { background: hsl(var(--gold)/0.85); color: hsl(var(--navy)); }
+.university-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.university-card { border: 1px solid hsl(var(--chalk) / 0.1); padding: 20px; border-radius: 1.25rem; text-align: center; background: hsl(var(--night-2)); }
+.university-image { width: 150px; height: 150px; object-fit: cover; border-radius: 12px; }
+.university-info { margin-top: 10px; }
+.pagination { display: flex; justify-content: center; margin-top: 20px; }
+.pagination button { margin: 0 5px; padding: 10px; background: hsl(var(--night-3)); color: white; border: none; border-radius: 999px; cursor: pointer; }
+.pagination button:disabled { opacity: 0.4; }
+.pagination button.active { background: hsl(var(--ember)); color: hsl(var(--night)); }
+@media (max-width: 768px) { .university-list { grid-template-columns: 1fr; } }
 
 @layer components {
-  /* The one accent, as a fill and as a hairline. */
-  .u-eyebrow { font-family: var(--font-mono), monospace; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: hsl(var(--gold-soft)); }
-  .u-rule-gold { height: 2px; width: 3rem; background: hsl(var(--gold)); }
-
-  /* The gold CTA and its ghost twin, full-pill, tactile on press. */
-  .btn-gold {
-    display: inline-flex; align-items: center; gap: 0.6rem; border-radius: 999px;
-    background: hsl(var(--gold)); color: hsl(var(--navy)); font-weight: 600;
-    padding: 0.85rem 1.6rem; transition: transform .12s, box-shadow .3s, background .3s;
-    box-shadow: 0 10px 30px -8px hsl(var(--gold)/0.5);
+  /* Buttons are pills; cards are 20px; inputs are pills. That is the whole
+     shape system, and it is the same on every page. */
+  .btn-ember {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; white-space: nowrap;
+    border-radius: 999px; background: hsl(var(--ember)); color: hsl(var(--night));
+    font-weight: 600; font-size: 0.95rem; padding: 0.9rem 1.5rem; line-height: 1;
+    box-shadow: 0 14px 40px -14px hsl(var(--ember) / 0.6);
+    transition: transform .15s cubic-bezier(.16,1,.3,1), background .3s, box-shadow .3s;
   }
-  .btn-gold:hover { background: hsl(var(--gold-soft)); box-shadow: 0 14px 40px -8px hsl(var(--gold)/0.6); }
-  .btn-gold:active { transform: translateY(1px) scale(0.99); }
+  .btn-ember:hover { background: hsl(var(--ember-deep)); box-shadow: 0 18px 50px -14px hsl(var(--ember) / 0.7); }
+  .btn-ember:active { transform: translateY(1px) scale(0.985); }
+  .btn-gold { @apply btn-ember; }
+
   .btn-ghost {
-    display: inline-flex; align-items: center; gap: 0.6rem; border-radius: 999px;
-    border: 1px solid hsl(var(--chalk)/0.3); color: hsl(var(--chalk)); padding: 0.85rem 1.6rem;
-    transition: border-color .3s, background .3s;
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; white-space: nowrap;
+    border-radius: 999px; border: 1px solid hsl(var(--chalk) / 0.22); color: hsl(var(--chalk));
+    font-weight: 500; font-size: 0.95rem; padding: 0.9rem 1.5rem; line-height: 1;
+    background: hsl(var(--night-2) / 0.35); backdrop-filter: blur(8px);
+    transition: border-color .3s, background .3s, transform .15s cubic-bezier(.16,1,.3,1);
   }
-  .btn-ghost:hover { border-color: hsl(var(--gold)/0.6); background: hsl(var(--chalk)/0.05); }
+  .btn-ghost:hover { border-color: hsl(var(--chalk) / 0.5); background: hsl(var(--chalk) / 0.06); }
+  .btn-ghost:active { transform: translateY(1px) scale(0.985); }
 
-  /* Glass card for navy sections. */
-  .glass { background: hsl(var(--navy-2)/0.55); border: 1px solid hsl(var(--chalk)/0.09); backdrop-filter: blur(14px); }
+  /* A raised surface on the night ground. Border, not shadow, because there is
+     no light source above a night sky to cast one. */
+  .panel { background: hsl(var(--night-2) / 0.82); border: 1px solid hsl(var(--chalk) / 0.09); border-radius: 1.25rem; }
+  .panel-solid { background: hsl(var(--night-2)); border: 1px solid hsl(var(--chalk) / 0.09); border-radius: 1.25rem; }
+
+  /* Section reading floor: the world shows through the gaps, never behind a paragraph. */
+  .reading { background: linear-gradient(180deg, hsl(var(--night) / 0) 0%, hsl(var(--night) / 0.86) 12%, hsl(var(--night) / 0.86) 88%, hsl(var(--night) / 0) 100%); }
+  .reading-solid { background: hsl(var(--night)); }
+
+  .display-xl { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.035em; line-height: 0.96; font-size: clamp(2.75rem, 7.2vw, 6rem); text-wrap: balance; }
+  .display-lg { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.03em; line-height: 1.0; font-size: clamp(2.1rem, 4.6vw, 3.9rem); text-wrap: balance; }
+  .display-md { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(1.5rem, 2.6vw, 2.25rem); text-wrap: balance; }
+  .lede { font-size: clamp(1.05rem, 1.35vw, 1.25rem); line-height: 1.55; color: hsl(var(--chalk-soft)); max-width: 36rem; text-wrap: pretty; }
+  .meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: hsl(var(--chalk-dim)); }
+
+  /* Horizontal strips hide the native scrollbar; the content itself is the cue. */
+  .no-bar { scrollbar-width: none; }
+  .no-bar::-webkit-scrollbar { display: none; }
+
+  /* Boarding-pass notch: the cutouts on the ticket edge. */
+  .ticket { position: relative; }
+  .ticket::before, .ticket::after {
+    content: ""; position: absolute; top: 50%; width: 22px; height: 22px; border-radius: 999px;
+    background: hsl(var(--night)); transform: translateY(-50%); border: 1px solid hsl(var(--chalk) / 0.09);
+  }
+  .ticket::before { left: -12px; border-left-color: transparent; }
+  .ticket::after { right: -12px; border-right-color: transparent; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
