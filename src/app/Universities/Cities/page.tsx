@@ -29,7 +29,7 @@ const cities = [
 ];
 
 const tierColors: Record<string, string> = {
-  "Tier 1":  "bg-teal-500/20 text-teal-300 ring-teal-500/30",
+  "Tier 1":  "bg-gold-500/20 text-gold-300 ring-gold-500/30",
   "Tier 2":  "bg-blue-500/20 text-blue-300 ring-blue-500/30",
   "Coastal": "bg-cyan-500/20 text-cyan-300 ring-cyan-500/30",
   "Emerging":"bg-violet-500/20 text-violet-300 ring-violet-500/30",
@@ -54,7 +54,7 @@ export default function Cities() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />
           <div className="relative z-10 pb-14 text-center px-4">
             <Animate variant="fade-down" delay={100}>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-400">Where Will You Study?</p>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold-400">Where Will You Study?</p>
             </Animate>
             <Animate variant="fade-up" delay={220}>
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Popular Cities</h1>
@@ -128,7 +128,7 @@ export default function Cities() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="border-t border-white/5 bg-gradient-to-br from-slate-900 via-slate-800 to-teal-950 px-4 py-14 sm:px-6 md:py-16">
+        <section className="border-t border-white/5 bg-gradient-to-br from-slate-900 via-slate-800 to-gold-950 px-4 py-14 sm:px-6 md:py-16">
           <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div className="max-w-xl space-y-3">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -140,7 +140,7 @@ export default function Cities() {
             </div>
             <a
               href="/About/Contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-teal-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-950/40 transition hover:bg-teal-400 whitespace-nowrap"
+              className="inline-flex items-center gap-2 rounded-xl bg-gold-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-gold-950/40 transition hover:bg-gold-400 whitespace-nowrap"
             >
               Get in touch
               <i className="fas fa-arrow-right text-sm" aria-hidden />

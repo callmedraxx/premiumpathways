@@ -41,7 +41,7 @@ export default function ApplySection() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <Animate variant="fade-up" className="mb-14 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-400">Your Journey</p>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold-400">Your Journey</p>
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">How to apply</h2>
           <p className="mx-auto mt-3 max-w-xl text-slate-300">
             A clear four-step journey from your first conversation to life on campus.
@@ -52,21 +52,21 @@ export default function ApplySection() {
           {/* Connector line — desktop only */}
           <div className="pointer-events-none absolute left-0 right-0 top-9 hidden lg:block">
             <div className="mx-auto max-w-6xl px-[12.5%]">
-              <div className="h-px bg-gradient-to-r from-transparent via-teal-500/40 to-transparent" />
+              <div className="h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent" />
             </div>
           </div>
 
           {steps.map((step, i) => (
             <Animate key={step.number} variant="fade-up" delay={i * 100} threshold={0.08}>
               <div className="group relative flex flex-col items-center text-center lg:px-5">
-                <div className="relative z-10 mb-5 flex h-[72px] w-[72px] items-center justify-center rounded-full border border-teal-500/30 bg-slate-950 shadow-[0_0_0_6px_rgba(15,23,42,0.8)] transition duration-300 group-hover:border-teal-400/60 group-hover:shadow-[0_0_20px_rgba(20,184,166,0.2)]">
-                  <i className={`fas ${step.icon} text-2xl text-teal-400 transition group-hover:scale-110`} aria-hidden />
-                  <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-teal-500 text-[10px] font-bold text-white">
+                <div className="relative z-10 mb-5 flex h-[72px] w-[72px] items-center justify-center rounded-full border border-gold-500/30 bg-slate-950 shadow-[0_0_0_6px_rgba(15,23,42,0.8)] transition duration-300 group-hover:border-gold-400/60 group-hover:shadow-[0_0_20px_rgba(20,184,166,0.2)]">
+                  <i className={`fas ${step.icon} text-2xl text-gold-400 transition group-hover:scale-110`} aria-hidden />
+                  <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-gold-500 text-[10px] font-bold text-white">
                     {i + 1}
                   </span>
                 </div>
-                <div className="flex flex-1 flex-col rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition duration-300 group-hover:border-teal-500/20 group-hover:bg-white/[0.08]">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-teal-400/80">Step {step.number}</p>
+                <div className="flex flex-1 flex-col rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition duration-300 group-hover:border-gold-500/20 group-hover:bg-white/[0.08]">
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-gold-400/80">Step {step.number}</p>
                   <h3 className="mb-2 text-lg font-bold text-white">{step.title}</h3>
                   <p className="text-sm leading-relaxed text-slate-400">{step.body}</p>
                 </div>
@@ -78,7 +78,7 @@ export default function ApplySection() {
         <Animate variant="fade-up" delay={400} className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Link
             href="/Services/Procedures"
-            className="inline-flex items-center gap-2 rounded-xl bg-teal-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal-950/50 transition hover:bg-teal-400"
+            className="inline-flex items-center gap-2 rounded-xl bg-gold-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-gold-950/50 transition hover:bg-gold-400"
           >
             View full procedures
             <i className="fas fa-arrow-right text-xs" aria-hidden />

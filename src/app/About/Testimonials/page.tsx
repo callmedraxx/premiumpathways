@@ -60,7 +60,7 @@ export default function Testimonials() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />
           <div className="relative z-10 pb-14 text-center px-4">
             <Animate variant="fade-down" delay={100}>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-400">Real Students, Real Stories</p>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold-400">Real Students, Real Stories</p>
             </Animate>
             <Animate variant="fade-up" delay={220}>
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Testimonials</h1>
@@ -80,7 +80,7 @@ export default function Testimonials() {
               {stats.map((s, i) => (
                 <Animate key={s.label} variant="scale-up" delay={i * 70}>
                   <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-6 text-center">
-                    <p className="text-3xl font-bold text-teal-400">{s.value}</p>
+                    <p className="text-3xl font-bold text-gold-400">{s.value}</p>
                     <p className="mt-1 text-xs text-slate-400">{s.label}</p>
                   </div>
                 </Animate>
@@ -93,16 +93,16 @@ export default function Testimonials() {
         <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto max-w-5xl">
             <Animate variant="fade-up" className="mb-10 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">Featured</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">Featured</p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Student Spotlights</h2>
             </Animate>
             <div className="grid gap-5 sm:grid-cols-2">
               {featured.map((t, i) => (
                 <Animate key={t.name} variant="fade-up" delay={i * 120}>
-                  <div className="relative overflow-hidden rounded-2xl border border-teal-500/20 bg-teal-500/5 p-6 sm:p-8">
-                    <span className="absolute right-5 top-3 text-7xl font-serif leading-none text-teal-500/10 select-none">&ldquo;</span>
+                  <div className="relative overflow-hidden rounded-2xl border border-gold-500/20 bg-gold-500/5 p-6 sm:p-8">
+                    <span className="absolute right-5 top-3 text-7xl font-serif leading-none text-gold-500/10 select-none">&ldquo;</span>
                     <div className="flex items-center gap-4 mb-5">
-                      <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-full ring-2 ring-teal-500/40 ring-offset-2 ring-offset-slate-950">
+                      <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-full ring-2 ring-gold-500/40 ring-offset-2 ring-offset-slate-950">
                         <Image src={t.image} alt={t.name} width={64} height={64} className="h-full w-full object-cover" />
                       </div>
                       <div>
@@ -110,7 +110,7 @@ export default function Testimonials() {
                         <p className="text-sm text-slate-400">{t.flag} {t.country}</p>
                         <div className="mt-1 flex gap-0.5">
                           {[...Array(5)].map((_, i) => (
-                            <i key={i} className="fas fa-star text-xs text-teal-400" aria-hidden />
+                            <i key={i} className="fas fa-star text-xs text-gold-400" aria-hidden />
                           ))}
                         </div>
                       </div>
@@ -129,7 +129,7 @@ export default function Testimonials() {
         <section className="bg-slate-900 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto max-w-6xl">
             <Animate variant="fade-up" className="mb-10 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">All Reviews</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">All Reviews</p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">What Our Students Say</h2>
               <p className="mt-3 text-slate-400">{testimonials.length} reviews from students across Africa, Asia, and beyond.</p>
             </Animate>
@@ -137,10 +137,10 @@ export default function Testimonials() {
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {testimonials.map((t, i) => (
                 <Animate key={t.name} variant="fade-up" delay={Math.min(i * 50, 400)} threshold={0.06}>
-                  <div className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-teal-500/20 hover:bg-white/[0.07]">
+                  <div className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-gold-500/20 hover:bg-white/[0.07]">
                     <div className="mb-3 flex gap-0.5">
                       {[...Array(5)].map((_, j) => (
-                        <i key={j} className="fas fa-star text-xs text-teal-400" aria-hidden />
+                        <i key={j} className="fas fa-star text-xs text-gold-400" aria-hidden />
                       ))}
                     </div>
                     <blockquote className="flex-1 text-sm text-slate-300 leading-relaxed">
@@ -163,7 +163,7 @@ export default function Testimonials() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="border-t border-white/5 bg-gradient-to-br from-slate-900 via-slate-800 to-teal-950 px-4 py-14 sm:px-6 md:py-16">
+        <section className="border-t border-white/5 bg-gradient-to-br from-slate-900 via-slate-800 to-gold-950 px-4 py-14 sm:px-6 md:py-16">
           <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <Animate variant="fade-left" className="max-w-xl space-y-3">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to write your own story?</h2>
@@ -172,7 +172,7 @@ export default function Testimonials() {
             <Animate variant="fade-right" delay={150}>
               <Link
                 href="/About/Contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-teal-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-950/40 transition hover:bg-teal-400 whitespace-nowrap"
+                className="inline-flex items-center gap-2 rounded-xl bg-gold-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-gold-950/40 transition hover:bg-gold-400 whitespace-nowrap"
               >
                 Get started
                 <i className="fas fa-arrow-right text-sm" aria-hidden />

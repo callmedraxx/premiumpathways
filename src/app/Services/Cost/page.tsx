@@ -88,7 +88,7 @@ export default function Cost() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />
           <div className="relative z-10 pb-14 text-center px-4">
             <Animate variant="fade-down" delay={100}>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-400">Transparent Pricing</p>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold-400">Transparent Pricing</p>
             </Animate>
             <Animate variant="fade-up" delay={220}>
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Cost Description</h1>
@@ -105,7 +105,7 @@ export default function Cost() {
         <section className="bg-slate-900 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
             <Animate variant="fade-left" className="order-2 lg:order-1">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">
                 Our Fee
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -145,7 +145,7 @@ export default function Cost() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
             </Animate>
             <Animate variant="fade-right" delay={120}>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">
                 University Charges
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -167,7 +167,7 @@ export default function Cost() {
         <section className="bg-slate-900 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto max-w-5xl">
             <Animate variant="fade-up" className="mb-12 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">
                 What&apos;s Included
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -182,8 +182,8 @@ export default function Cost() {
               {/* Package A */}
               <Animate variant="fade-left">
               <div className="flex flex-col rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
-                <div className="bg-teal-500/20 border-b border-white/10 px-6 py-5 text-center">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-teal-400 mb-1">Standard</p>
+                <div className="bg-gold-500/20 border-b border-white/10 px-6 py-5 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gold-400 mb-1">Standard</p>
                   <h3 className="text-xl font-bold text-white">Package A</h3>
                   <p className="mt-2 text-3xl font-bold text-white">
                     $1,200 <span className="text-base font-normal text-slate-400">USD</span>
@@ -192,7 +192,7 @@ export default function Cost() {
                 <ul className="flex-1 divide-y divide-white/5 px-6 py-4">
                   {serviceItems.map((item) => (
                     <li key={item} className="flex items-start gap-3 py-3 text-sm text-slate-300">
-                      <i className="fas fa-check text-teal-400 mt-0.5 flex-shrink-0" aria-hidden />
+                      <i className="fas fa-check text-gold-400 mt-0.5 flex-shrink-0" aria-hidden />
                       {item}
                     </li>
                   ))}
@@ -202,9 +202,9 @@ export default function Cost() {
 
               {/* Package B */}
               <Animate variant="fade-right" delay={100}>
-              <div className="flex flex-col rounded-2xl border border-teal-500/30 bg-teal-500/5 overflow-hidden ring-1 ring-teal-500/20">
-                <div className="bg-teal-500/30 border-b border-teal-500/20 px-6 py-5 text-center">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-teal-300 mb-1">Standard</p>
+              <div className="flex flex-col rounded-2xl border border-gold-500/30 bg-gold-500/5 overflow-hidden ring-1 ring-gold-500/20">
+                <div className="bg-gold-500/30 border-b border-gold-500/20 px-6 py-5 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gold-300 mb-1">Standard</p>
                   <h3 className="text-xl font-bold text-white">Package B</h3>
                   <p className="mt-2 text-3xl font-bold text-white">
                     $1,000 <span className="text-base font-normal text-slate-400">USD</span>
@@ -213,7 +213,7 @@ export default function Cost() {
                 <ul className="flex-1 divide-y divide-white/5 px-6 py-4">
                   {serviceItems.map((item) => (
                     <li key={item} className="flex items-start gap-3 py-3 text-sm text-slate-300">
-                      <i className="fas fa-check text-teal-400 mt-0.5 flex-shrink-0" aria-hidden />
+                      <i className="fas fa-check text-gold-400 mt-0.5 flex-shrink-0" aria-hidden />
                       {item}
                     </li>
                   ))}
@@ -228,7 +228,7 @@ export default function Cost() {
         <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
             <div className="order-2 lg:order-1">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">
                 Also Included
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -240,7 +240,7 @@ export default function Cost() {
               <ul className="mt-6 space-y-3">
                 {reminderItems.map(({ icon, label }) => (
                   <li key={label} className="flex items-center gap-3 text-slate-300">
-                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400">
+                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400">
                       <i className={`fas ${icon} text-sm`} aria-hidden />
                     </span>
                     {label}
@@ -273,7 +273,7 @@ export default function Cost() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
             </div>
             <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">
                 Peace of Mind
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -282,7 +282,7 @@ export default function Cost() {
               <ul className="mt-6 space-y-4">
                 {refundItems.map(({ icon, text }) => (
                   <li key={text} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
-                    <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-white/5 text-teal-400 mt-0.5">
+                    <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-white/5 text-gold-400 mt-0.5">
                       <i className={`fas ${icon} text-xs`} aria-hidden />
                     </span>
                     {text}

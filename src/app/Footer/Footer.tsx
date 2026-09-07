@@ -49,7 +49,7 @@ const Footer = ({ className = "" }: FooterProps) => {
             <div className="mt-8 space-y-4 text-sm text-slate-300">
               <div className="flex gap-3">
                 <span
-                  className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-teal-400"
+                  className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gold-400"
                   aria-hidden
                 >
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -92,7 +92,7 @@ const Footer = ({ className = "" }: FooterProps) => {
                 <span className="text-slate-500">Email </span>
                 <a
                   href="mailto:premiumpathways78@gmail.com"
-                  className="font-medium text-teal-400 transition hover:text-teal-300"
+                  className="font-medium text-gold-400 transition hover:text-gold-300"
                 >
                   premiumpathways78@gmail.com
                 </a>
@@ -182,14 +182,14 @@ const Footer = ({ className = "" }: FooterProps) => {
             <div className="flex flex-wrap gap-3">
               <a
                 href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition hover:border-teal-400/40 hover:bg-teal-500/10"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition hover:border-gold-400/40 hover:bg-gold-500/10"
                 aria-label="Facebook"
               >
                 <Image src="/img/facebook.png" alt="" width={20} height={20} />
               </a>
               <a
                 href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition hover:border-teal-400/40 hover:bg-teal-500/10"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition hover:border-gold-400/40 hover:bg-gold-500/10"
                 aria-label="X"
               >
                 <Image src="/img/x.png" alt="" width={18} height={18} />
@@ -198,7 +198,7 @@ const Footer = ({ className = "" }: FooterProps) => {
                 href="https://www.instagram.com/premiumpathways1/profilecard/?igsh=MXN0aTR0YmpkbXFtag=="
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition hover:border-teal-400/40 hover:bg-teal-500/10"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition hover:border-gold-400/40 hover:bg-gold-500/10"
                 aria-label="Instagram"
               >
                 <Image src="/img/instagram.png" alt="" width={20} height={20} />

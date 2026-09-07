@@ -52,10 +52,10 @@ export default function Contact() {
   };
 
   const inputClass =
-    "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-teal-500/50 focus:bg-white/10";
+    "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-gold-500/50 focus:bg-white/10";
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-950">
+    <div className="flex flex-col min-h-screen">
       <Header />
 
       <main className="flex flex-1 flex-col">
@@ -72,7 +72,7 @@ export default function Contact() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />
           <div className="relative z-10 pb-14 text-center px-4">
             <Animate variant="fade-down" delay={100}>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-400">We&apos;re Here to Help</p>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold-400">We&apos;re Here to Help</p>
             </Animate>
             <Animate variant="fade-up" delay={220}>
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Get in Touch</h1>
@@ -97,7 +97,7 @@ export default function Contact() {
 
                 {sent ? (
                   <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
-                    <span className="flex h-16 w-16 items-center justify-center rounded-full bg-teal-500/15 text-teal-400">
+                    <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold-500/15 text-gold-400">
                       <i className="fas fa-check text-2xl" aria-hidden />
                     </span>
                     <p className="text-lg font-semibold text-white">Message sent!</p>
@@ -131,7 +131,7 @@ export default function Contact() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full rounded-xl bg-teal-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal-950/40 transition hover:bg-teal-400"
+                      className="w-full rounded-xl bg-gold-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-gold-950/40 transition hover:bg-gold-400"
                     >
                       Send Message
                       <i className="fas fa-paper-plane ml-2 text-xs" aria-hidden />
@@ -149,13 +149,13 @@ export default function Contact() {
                 <ul className="space-y-5">
                   {contactDetails.map((item) => (
                     <li key={item.label} className="flex items-start gap-4">
-                      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400">
+                      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400">
                         <i className={`${item.icon.startsWith("fab") ? item.icon : `fas ${item.icon}`} text-sm`} aria-hidden />
                       </span>
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">{item.label}</p>
                         {item.href ? (
-                          <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="mt-0.5 text-sm text-white hover:text-teal-400 transition">
+                          <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="mt-0.5 text-sm text-white hover:text-gold-400 transition">
                             {item.value}
                           </a>
                         ) : (
@@ -178,8 +178,8 @@ export default function Contact() {
                     { label: "Browse top universities", href: "/Universities/Top" },
                   ].map((link) => (
                     <li key={link.href}>
-                      <a href={link.href} className="flex items-center gap-2 text-sm text-slate-400 transition hover:text-teal-400">
-                        <i className="fas fa-chevron-right text-[10px] text-teal-500/60" aria-hidden />
+                      <a href={link.href} className="flex items-center gap-2 text-sm text-slate-400 transition hover:text-gold-400">
+                        <i className="fas fa-chevron-right text-[10px] text-gold-500/60" aria-hidden />
                         {link.label}
                       </a>
                     </li>
@@ -194,7 +194,7 @@ export default function Contact() {
         <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-8 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">Location</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">Location</p>
               <h2 className="text-2xl font-bold text-white">Find us in Beijing</h2>
             </div>
             <div className="overflow-hidden rounded-2xl ring-1 ring-white/10">

@@ -39,7 +39,7 @@ const PopularCities = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full p-4">
                   <p className="text-lg font-semibold text-white">{city.name}</p>
-                  <p className="text-xs font-medium text-teal-300/90 opacity-0 transition group-hover:opacity-100">
+                  <p className="text-xs font-medium text-gold-300/90 opacity-0 transition group-hover:opacity-100">
                     View options →
                   </p>
                 </div>

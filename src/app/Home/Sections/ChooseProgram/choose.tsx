@@ -64,9 +64,9 @@ const ChooseProgram = () => {
               <Link
                 key={p.title}
                 href={p.href}
-                className={`group relative overflow-hidden rounded-2xl ring-1 transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400
+                className={`group relative overflow-hidden rounded-2xl ring-1 transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400
                   ${p.large ? "min-h-[280px] lg:col-span-2 lg:row-span-2 lg:min-h-0" : "min-h-[200px] lg:min-h-0"}
-                  ${p.available ? "ring-white/10 hover:ring-teal-500/40" : "ring-white/10 cursor-pointer"}
+                  ${p.available ? "ring-white/10 hover:ring-gold-500/40" : "ring-white/10 cursor-pointer"}
                 `}
               >
                 <Image
@@ -83,7 +83,7 @@ const ChooseProgram = () => {
                       ? "bg-slate-800/90 text-slate-400 ring-white/10"
                       : p.tag === "Language & Culture"
                       ? "bg-cyan-500/20 text-cyan-300 ring-cyan-500/30"
-                      : "bg-teal-500/20 text-teal-300 ring-teal-500/30"
+                      : "bg-gold-500/20 text-gold-300 ring-gold-500/30"
                   }`}>
                     {p.tag}
                   </span>
@@ -95,7 +95,7 @@ const ChooseProgram = () => {
                   <p className={`mt-1.5 text-sm leading-relaxed text-slate-300 transition-all duration-300 max-h-0 overflow-hidden opacity-0 group-hover:max-h-20 group-hover:opacity-100 ${p.large ? "sm:text-base" : ""}`}>
                     {p.description}
                   </p>
-                  <div className={`mt-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider transition-all duration-300 max-h-0 overflow-hidden opacity-0 group-hover:max-h-10 group-hover:opacity-100 ${p.available ? "text-teal-400" : "text-slate-400"}`}>
+                  <div className={`mt-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider transition-all duration-300 max-h-0 overflow-hidden opacity-0 group-hover:max-h-10 group-hover:opacity-100 ${p.available ? "text-gold-400" : "text-slate-400"}`}>
                     {p.available ? "Explore program" : "Get notified"}
                     <i className="fas fa-arrow-right text-[10px]" aria-hidden />
                   </div>

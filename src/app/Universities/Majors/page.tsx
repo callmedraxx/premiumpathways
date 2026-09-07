@@ -64,7 +64,7 @@ export default function Majors() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />
           <div className="relative z-10 pb-14 text-center px-4">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-400">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold-400">
               Explore Your Options
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
@@ -79,7 +79,7 @@ export default function Majors() {
         {/* ── Overview + Stats ── */}
         <section className="bg-slate-900 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">
               Overview
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -96,7 +96,7 @@ export default function Majors() {
                   key={s.label}
                   className="rounded-2xl border border-white/10 bg-white/5 px-4 py-6"
                 >
-                  <p className="text-3xl font-bold text-teal-400 sm:text-4xl">{s.value}</p>
+                  <p className="text-3xl font-bold text-gold-400 sm:text-4xl">{s.value}</p>
                   <p className="mt-1 text-sm text-slate-400">{s.label}</p>
                 </div>
               ))}
@@ -118,10 +118,10 @@ export default function Majors() {
               {/* Text */}
               <div className={s.reverse ? "lg:order-2" : "lg:order-1"}>
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400">
                     <i className={`fas ${s.icon} text-sm`} aria-hidden />
                   </span>
-                  <p className="text-sm font-semibold uppercase tracking-widest text-teal-400">
+                  <p className="text-sm font-semibold uppercase tracking-widest text-gold-400">
                     {s.label}
                   </p>
                 </div>
@@ -131,7 +131,7 @@ export default function Majors() {
                 <p className="mt-5 text-slate-300 leading-relaxed">{s.body}</p>
                 <a
                   href="/About/Contact"
-                  className="mt-6 inline-flex items-center gap-2 rounded-xl bg-teal-500/15 px-5 py-2.5 text-sm font-semibold text-teal-300 ring-1 ring-teal-500/30 transition hover:bg-teal-500 hover:text-white"
+                  className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold-500/15 px-5 py-2.5 text-sm font-semibold text-gold-300 ring-1 ring-gold-500/30 transition hover:bg-gold-500 hover:text-white"
                 >
                   Enquire about this program
                   <i className="fas fa-arrow-right text-xs" aria-hidden />
@@ -157,7 +157,7 @@ export default function Majors() {
         ))}
 
         {/* ── CTA ── */}
-        <section className="border-t border-white/5 bg-gradient-to-br from-slate-900 via-slate-800 to-teal-950 px-4 py-14 sm:px-6 md:py-16">
+        <section className="border-t border-white/5 bg-gradient-to-br from-slate-900 via-slate-800 to-gold-950 px-4 py-14 sm:px-6 md:py-16">
           <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div className="max-w-xl space-y-3">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -169,7 +169,7 @@ export default function Majors() {
             </div>
             <a
               href="/About/Contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-teal-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-950/40 transition hover:bg-teal-400 whitespace-nowrap"
+              className="inline-flex items-center gap-2 rounded-xl bg-gold-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-gold-950/40 transition hover:bg-gold-400 whitespace-nowrap"
             >
               Get in touch
               <i className="fas fa-arrow-right text-sm" aria-hidden />

@@ -199,7 +199,7 @@ function TopUniversitiesInner() {
           <Image src="/img/tsinghua-university.jpg" alt="Top universities in China" fill className="object-cover object-center" priority />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />
           <div className="relative z-10 pb-14 text-center px-4">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-400">QS World Rankings</p>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold-400">QS World Rankings</p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Top Universities</h1>
             <p className="mx-auto mt-4 max-w-xl text-slate-300">
               China is home to some of the world&apos;s highest-ranked institutions — explore the best and find your fit.
@@ -211,7 +211,7 @@ function TopUniversitiesInner() {
         <section className="bg-slate-900 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto max-w-5xl">
             <div className="mb-10 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">QS Rankings</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">QS Rankings</p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">China&apos;s Global Standing</h2>
               <p className="mt-3 text-slate-400">33 Chinese universities are included in the QS Global Top 400.</p>
             </div>
@@ -219,16 +219,16 @@ function TopUniversitiesInner() {
               <table className="min-w-full text-sm">
                 <thead>
                   <tr className="border-b border-white/10 bg-white/5">
-                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-teal-400">Rank</th>
-                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-teal-400">Chinese</th>
-                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-teal-400">English</th>
-                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-teal-400">Location</th>
+                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gold-400">Rank</th>
+                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gold-400">Chinese</th>
+                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gold-400">English</th>
+                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gold-400">Location</th>
                   </tr>
                 </thead>
                 <tbody>
                   {universities.map((u, i) => (
                     <tr key={u.rank} className={`border-b border-white/5 transition hover:bg-white/5 ${i % 2 === 0 ? "" : "bg-white/[0.02]"}`}>
-                      <td className="px-5 py-3.5 font-bold text-teal-400">#{u.rank}</td>
+                      <td className="px-5 py-3.5 font-bold text-gold-400">#{u.rank}</td>
                       <td className="px-5 py-3.5 text-slate-300">{u.chinese}</td>
                       <td className="px-5 py-3.5 text-white font-medium">{u.english}</td>
                       <td className="px-5 py-3.5 text-slate-400">{u.location}</td>
@@ -244,18 +244,18 @@ function TopUniversitiesInner() {
         <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto max-w-7xl">
             <div className="mb-10 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">Detailed Profiles</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">Detailed Profiles</p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">University Profiles</h2>
               <p className="mt-3 text-slate-400">Student numbers and estimated monthly living costs for international students.</p>
             </div>
 
             {/* Search result banner */}
             {query && (
-              <div className="mb-6 flex items-center justify-between rounded-xl border border-teal-500/20 bg-teal-500/10 px-4 py-3">
+              <div className="mb-6 flex items-center justify-between rounded-xl border border-gold-500/20 bg-gold-500/10 px-4 py-3">
                 <p className="text-sm text-slate-300">
                   {filtered.length > 0
-                    ? <><span className="font-semibold text-white">{filtered.length}</span> result{filtered.length !== 1 ? "s" : ""} for <span className="font-semibold text-teal-300">&ldquo;{query}&rdquo;</span></>
-                    : <>No results for <span className="font-semibold text-teal-300">&ldquo;{query}&rdquo;</span> — showing all universities</>
+                    ? <><span className="font-semibold text-white">{filtered.length}</span> result{filtered.length !== 1 ? "s" : ""} for <span className="font-semibold text-gold-300">&ldquo;{query}&rdquo;</span></>
+                    : <>No results for <span className="font-semibold text-gold-300">&ldquo;{query}&rdquo;</span> — showing all universities</>
                   }
                 </p>
                 <button
@@ -270,7 +270,7 @@ function TopUniversitiesInner() {
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {visible.map((u, idx) => (
                 <Animate key={u.name} variant="fade-up" delay={Math.min(idx * 60, 360)} threshold={0.05}>
-                <div className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:border-teal-500/30">
+                <div className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:border-gold-500/30">
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Image src={u.image} alt={u.name} fill className="object-cover transition duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
@@ -279,19 +279,19 @@ function TopUniversitiesInner() {
                     <h3 className="text-sm font-semibold text-white leading-snug">{u.name}</h3>
                     <div className="mt-3 flex-1 space-y-1.5">
                       <div className="flex items-center gap-2 text-xs text-slate-400">
-                        <i className="fas fa-map-marker-alt text-teal-400 w-3.5 text-center" aria-hidden />
+                        <i className="fas fa-map-marker-alt text-gold-400 w-3.5 text-center" aria-hidden />
                         {u.city}
                       </div>
                       <div className="flex items-center gap-2 text-xs text-slate-400">
-                        <i className="fas fa-users text-teal-400 w-3.5 text-center" aria-hidden />
+                        <i className="fas fa-users text-gold-400 w-3.5 text-center" aria-hidden />
                         {u.totalStudents ? u.totalStudents.toLocaleString() : "N/A"} students
                       </div>
                       <div className="flex items-center gap-2 text-xs text-slate-400">
-                        <i className="fas fa-globe text-teal-400 w-3.5 text-center" aria-hidden />
+                        <i className="fas fa-globe text-gold-400 w-3.5 text-center" aria-hidden />
                         {u.internationalStudents ? u.internationalStudents.toLocaleString() : "N/A"} intl. students
                       </div>
                       <div className="flex items-center gap-2 text-xs text-white font-medium">
-                        <i className="fas fa-dollar-sign text-teal-400 w-3.5 text-center" aria-hidden />
+                        <i className="fas fa-dollar-sign text-gold-400 w-3.5 text-center" aria-hidden />
                         ~${u.livingCost}/mo living cost
                       </div>
                     </div>
@@ -316,7 +316,7 @@ function TopUniversitiesInner() {
                   onClick={() => setPage(n)}
                   className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-medium transition ${
                     n === page
-                      ? "bg-teal-500 text-white"
+                      ? "bg-gold-500 text-white"
                       : "border border-white/20 bg-white/5 text-slate-400 hover:bg-white/10"
                   }`}
                 >
@@ -338,7 +338,7 @@ function TopUniversitiesInner() {
         <section className="bg-slate-900 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto max-w-4xl">
             <div className="mb-10 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">International Students</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">International Students</p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Top 20 Most Popular Universities</h2>
               <p className="mt-3 text-slate-400">Ranked by number of enrolled international students.</p>
             </div>
@@ -346,16 +346,16 @@ function TopUniversitiesInner() {
               <table className="min-w-full text-sm">
                 <thead>
                   <tr className="border-b border-white/10 bg-white/5">
-                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-teal-400">#</th>
-                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-teal-400">Chinese</th>
-                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-teal-400">English</th>
-                    <th className="px-5 py-3.5 text-right text-xs font-semibold uppercase tracking-wider text-teal-400">Intl. Students</th>
+                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gold-400">#</th>
+                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gold-400">Chinese</th>
+                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gold-400">English</th>
+                    <th className="px-5 py-3.5 text-right text-xs font-semibold uppercase tracking-wider text-gold-400">Intl. Students</th>
                   </tr>
                 </thead>
                 <tbody>
                   {popularUniversities.map((u, i) => (
                     <tr key={u.rank} className={`border-b border-white/5 transition hover:bg-white/5 ${i % 2 === 0 ? "" : "bg-white/[0.02]"}`}>
-                      <td className="px-5 py-3 font-bold text-teal-400">{u.rank}</td>
+                      <td className="px-5 py-3 font-bold text-gold-400">{u.rank}</td>
                       <td className="px-5 py-3 text-slate-400">{u.chinese}</td>
                       <td className="px-5 py-3 text-white font-medium">{u.english}</td>
                       <td className="px-5 py-3 text-right text-slate-300">{u.students}</td>
@@ -373,7 +373,7 @@ function TopUniversitiesInner() {
             {/* Affordable */}
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
               <div className="mb-6 flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400">
                   <i className="fas fa-tag text-sm" aria-hidden />
                 </span>
                 <h2 className="text-xl font-bold text-white">Top 15 Most Affordable</h2>
@@ -381,7 +381,7 @@ function TopUniversitiesInner() {
               <ol className="space-y-2">
                 {affordableUniversities.map((name, i) => (
                   <li key={name} className="flex items-center gap-3 text-sm text-slate-300">
-                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-teal-500/10 text-xs font-bold text-teal-400">{i + 1}</span>
+                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold-500/10 text-xs font-bold text-gold-400">{i + 1}</span>
                     {name}
                   </li>
                 ))}
@@ -391,7 +391,7 @@ function TopUniversitiesInner() {
             {/* Medical */}
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
               <div className="mb-6 flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400">
                   <i className="fas fa-stethoscope text-sm" aria-hidden />
                 </span>
                 <h2 className="text-xl font-bold text-white">Top 8 Medical Universities</h2>
@@ -399,10 +399,10 @@ function TopUniversitiesInner() {
               <ol className="space-y-3">
                 {medicalUniversities.map((u, i) => (
                   <li key={u.name} className="flex items-start gap-3 text-sm">
-                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-teal-500/10 text-xs font-bold text-teal-400 mt-0.5">{i + 1}</span>
+                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold-500/10 text-xs font-bold text-gold-400 mt-0.5">{i + 1}</span>
                     <div>
                       <span className="text-white font-medium">{u.name}</span>
-                      <span className="ml-2 text-xs text-teal-400">({u.short})</span>
+                      <span className="ml-2 text-xs text-gold-400">({u.short})</span>
                     </div>
                   </li>
                 ))}
@@ -415,7 +415,7 @@ function TopUniversitiesInner() {
         <section className="bg-slate-900 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-10 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">Government Programs</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">Government Programs</p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Project 211 & Project 985</h2>
               <p className="mt-3 max-w-2xl mx-auto text-slate-400">
                 China&apos;s two flagship government initiatives designating elite universities for additional funding and development.
@@ -440,7 +440,7 @@ function TopUniversitiesInner() {
                   <ul className="space-y-2">
                     {proj.universities.map((name) => (
                       <li key={name} className="flex items-center gap-2 text-sm text-slate-300">
-                        <i className="fas fa-check text-teal-400 text-xs flex-shrink-0" aria-hidden />
+                        <i className="fas fa-check text-gold-400 text-xs flex-shrink-0" aria-hidden />
                         {name}
                       </li>
                     ))}
@@ -455,7 +455,7 @@ function TopUniversitiesInner() {
         <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto max-w-4xl">
             <div className="mb-8 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">CSC Scholarships</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">CSC Scholarships</p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Universities Accepting CSC Scholarships</h2>
               <p className="mt-3 text-slate-400">Chinese Government Scholarship (CSC) eligible institutions.</p>
             </div>
@@ -463,7 +463,7 @@ function TopUniversitiesInner() {
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {cscList.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-slate-300">
-                    <i className="fas fa-university text-teal-400/60 text-xs mt-1 flex-shrink-0" aria-hidden />
+                    <i className="fas fa-university text-gold-400/60 text-xs mt-1 flex-shrink-0" aria-hidden />
                     {item}
                   </li>
                 ))}
@@ -476,7 +476,7 @@ function TopUniversitiesInner() {
         <section className="bg-slate-900 px-4 py-16 sm:px-6 md:py-20">
           <div className="mx-auto max-w-4xl">
             <div className="mb-10 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-teal-400">Decision Guide</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">Decision Guide</p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">How to Choose a University</h2>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -487,7 +487,7 @@ function TopUniversitiesInner() {
                 { icon: "fa-flask",          title: "Field of Study",               body: "Science, technology, and engineering majors are highly regarded and consistently offer stronger employment outcomes and wages." },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5">
-                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400">
+                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400">
                     <i className={`fas ${item.icon} text-sm`} aria-hidden />
                   </span>
                   <div>
@@ -501,7 +501,7 @@ function TopUniversitiesInner() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="border-t border-white/5 bg-gradient-to-br from-slate-900 via-slate-800 to-teal-950 px-4 py-14 sm:px-6 md:py-16">
+        <section className="border-t border-white/5 bg-gradient-to-br from-slate-900 via-slate-800 to-gold-950 px-4 py-14 sm:px-6 md:py-16">
           <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div className="max-w-xl space-y-3">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to apply to a top university?</h2>
@@ -509,7 +509,7 @@ function TopUniversitiesInner() {
             </div>
             <a
               href="/About/Contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-teal-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-950/40 transition hover:bg-teal-400 whitespace-nowrap"
+              className="inline-flex items-center gap-2 rounded-xl bg-gold-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-gold-950/40 transition hover:bg-gold-400 whitespace-nowrap"
             >
               Get in touch
               <i className="fas fa-arrow-right text-sm" aria-hidden />

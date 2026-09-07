@@ -78,7 +78,7 @@ export default function FAQ() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />
           <div className="relative z-10 pb-14 text-center px-4">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-400">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold-400">
               Got Questions?
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
@@ -100,7 +100,7 @@ export default function FAQ() {
                 <div
                   className={`rounded-2xl border transition-colors duration-200 ${
                     isOpen
-                      ? "border-teal-500/30 bg-teal-500/5"
+                      ? "border-gold-500/30 bg-gold-500/5"
                       : "border-white/10 bg-white/5 hover:border-white/20"
                   }`}
                 >
@@ -115,7 +115,7 @@ export default function FAQ() {
                     <span
                       className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-200 ${
                         isOpen
-                          ? "border-teal-500/40 bg-teal-500/15 text-teal-400 rotate-45"
+                          ? "border-gold-500/40 bg-gold-500/15 text-gold-400 rotate-45"
                           : "border-white/20 bg-white/5 text-slate-400"
                       }`}
                     >
@@ -136,7 +136,7 @@ export default function FAQ() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="border-t border-white/5 bg-gradient-to-br from-slate-900 via-slate-800 to-teal-950 px-4 py-14 sm:px-6 md:py-16">
+        <section className="border-t border-white/5 bg-gradient-to-br from-slate-900 via-slate-800 to-gold-950 px-4 py-14 sm:px-6 md:py-16">
           <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <Animate variant="fade-left" className="max-w-xl space-y-3">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -149,7 +149,7 @@ export default function FAQ() {
             <Animate variant="fade-right" delay={150}>
               <a
                 href="/About/Contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-teal-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-950/40 transition hover:bg-teal-400 whitespace-nowrap"
+                className="inline-flex items-center gap-2 rounded-xl bg-gold-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-gold-950/40 transition hover:bg-gold-400 whitespace-nowrap"
               >
                 Contact us
                 <i className="fas fa-arrow-right text-sm" aria-hidden />

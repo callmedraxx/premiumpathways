@@ -90,7 +90,7 @@ const Menu = ({ isMobile, toggleMenu }: MenuProps) => {
               <ul
                 className={`${
                   isMobile
-                    ? "space-y-0 border-l-2 border-teal-500/50 py-1 pl-2 ml-4 my-1"
+                    ? "space-y-0 border-l-2 border-gold-500/50 py-1 pl-2 ml-4 my-1"
                     : "absolute left-0 top-full z-[60] mt-1 min-w-[14rem] overflow-hidden rounded-xl border border-slate-200/80 bg-white py-1 shadow-xl shadow-slate-900/10"
                 }`}
               >
@@ -100,8 +100,8 @@ const Menu = ({ isMobile, toggleMenu }: MenuProps) => {
                       href={subItem.href}
                       className={`block px-4 py-2.5 text-sm transition ${
                         isMobile
-                          ? "text-slate-300 hover:text-teal-300"
-                          : "text-slate-700 hover:bg-teal-50 hover:text-teal-800"
+                          ? "text-slate-300 hover:text-gold-300"
+                          : "text-slate-700 hover:bg-gold-50 hover:text-gold-800"
                       }`}
                       onClick={toggleMenu}
                     >

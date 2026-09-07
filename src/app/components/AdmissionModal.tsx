@@ -34,7 +34,7 @@ const AdmissionModal = ({ university, onClose }: AdmissionModalProps) => {
   };
 
   const inputClass =
-    "w-full rounded-xl border border-white/10 bg-slate-800/60 px-4 py-2.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-teal-500/60 focus:bg-slate-800 focus:ring-1 focus:ring-teal-500/20";
+    "w-full rounded-xl border border-white/10 bg-slate-800/60 px-4 py-2.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-gold-500/60 focus:bg-slate-800 focus:ring-1 focus:ring-gold-500/20";
   const labelClass = "mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-400";
 
   return (
@@ -50,7 +50,7 @@ const AdmissionModal = ({ university, onClose }: AdmissionModalProps) => {
         {/* ── Fixed header ── */}
         <div className="flex flex-shrink-0 items-start justify-between gap-4 border-b border-white/8 bg-slate-900/95 px-6 py-5 sm:px-8">
           <div className="flex items-center gap-3">
-            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400">
+            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400">
               <i className="fas fa-graduation-cap text-base" aria-hidden />
             </span>
             <div>
@@ -78,7 +78,7 @@ const AdmissionModal = ({ university, onClose }: AdmissionModalProps) => {
 
             {/* Section: Personal Info */}
             <div>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-teal-400">Personal Information</p>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-gold-400">Personal Information</p>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
                   <label className={labelClass}>Full Name</label>
@@ -124,7 +124,7 @@ const AdmissionModal = ({ university, onClose }: AdmissionModalProps) => {
 
             {/* Section: Education & Background */}
             <div>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-teal-400">Education &amp; Background</p>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-gold-400">Education &amp; Background</p>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
                   <label className={labelClass}>Education Qualification</label>
@@ -150,7 +150,7 @@ const AdmissionModal = ({ university, onClose }: AdmissionModalProps) => {
 
             {/* Section: Additional */}
             <div>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-teal-400">Additional Information</p>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-gold-400">Additional Information</p>
               <textarea
                 name="message"
                 rows={3}
@@ -173,7 +173,7 @@ const AdmissionModal = ({ university, onClose }: AdmissionModalProps) => {
           <button
             type="submit"
             form="admission-form"
-            className="inline-flex items-center gap-2 rounded-xl bg-teal-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-teal-950/50 transition hover:bg-teal-400"
+            className="inline-flex items-center gap-2 rounded-xl bg-gold-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-gold-950/50 transition hover:bg-gold-400"
           >
             <i className="fas fa-paper-plane text-xs" aria-hidden />
             Submit Application

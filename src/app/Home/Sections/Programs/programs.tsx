@@ -184,7 +184,7 @@ const Programs = () => {
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <Animate variant="fade-up" className="mb-12 text-center">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-teal-300/90">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300/90">
             Explore options
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -209,7 +209,7 @@ const Programs = () => {
                   href="/Scholarships/NonD"
                   className="w-full flex-shrink-0 px-2 md:w-1/2 lg:w-1/4"
                 >
-                  <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] shadow-lg transition hover:border-teal-400/35 hover:from-white/[0.1] hover:shadow-teal-950/20">
+                  <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] shadow-lg transition hover:border-gold-400/35 hover:from-white/[0.1] hover:shadow-gold-950/20">
                     <div className="relative aspect-[5/3] w-full shrink-0 overflow-hidden">
                       <Image
                         src={item.image}
@@ -219,7 +219,7 @@ const Programs = () => {
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
-                      <span className="absolute bottom-3 left-3 rounded-full border border-white/20 bg-slate-950/60 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-teal-200 backdrop-blur-sm">
+                      <span className="absolute bottom-3 left-3 rounded-full border border-white/20 bg-slate-950/60 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-gold-200 backdrop-blur-sm">
                         {item.details.degree}
                       </span>
                     </div>
@@ -291,10 +291,10 @@ const Programs = () => {
                       </div>
 
                       <div className="mt-auto flex items-center justify-between gap-2 pt-1">
-                        <span className="inline-flex items-center rounded-full border border-teal-400/30 bg-teal-500/15 px-2.5 py-1 text-[11px] font-medium text-teal-200">
+                        <span className="inline-flex items-center rounded-full border border-gold-400/30 bg-gold-500/15 px-2.5 py-1 text-[11px] font-medium text-gold-200">
                           Scholarship {item.details.scholarship}
                         </span>
-                        <span className="text-[11px] font-medium text-teal-400/90 opacity-0 transition group-hover:opacity-100">
+                        <span className="text-[11px] font-medium text-gold-400/90 opacity-0 transition group-hover:opacity-100">
                           View →
                         </span>
                       </div>
@@ -309,7 +309,7 @@ const Programs = () => {
               onClick={handlePrev}
               disabled={currentIndex === 0}
               aria-label="Previous programs"
-              className="absolute left-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-slate-950/80 text-white shadow-lg backdrop-blur-md transition hover:border-teal-400/40 hover:bg-teal-600/30 disabled:pointer-events-none disabled:opacity-30 sm:left-3"
+              className="absolute left-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-slate-950/80 text-white shadow-lg backdrop-blur-md transition hover:border-gold-400/40 hover:bg-gold-600/30 disabled:pointer-events-none disabled:opacity-30 sm:left-3"
             >
               <span className="text-lg leading-none" aria-hidden>
                 ←
@@ -320,7 +320,7 @@ const Programs = () => {
               onClick={handleNext}
               disabled={currentIndex + itemsPerView >= items.length}
               aria-label="Next programs"
-              className="absolute right-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-slate-950/80 text-white shadow-lg backdrop-blur-md transition hover:border-teal-400/40 hover:bg-teal-600/30 disabled:pointer-events-none disabled:opacity-30 sm:right-3"
+              className="absolute right-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-slate-950/80 text-white shadow-lg backdrop-blur-md transition hover:border-gold-400/40 hover:bg-gold-600/30 disabled:pointer-events-none disabled:opacity-30 sm:right-3"
             >
               <span className="text-lg leading-none" aria-hidden>
                 →
@@ -339,7 +339,7 @@ const Programs = () => {
               onClick={() => goToPage(index)}
               className={`h-2 rounded-full transition-all ${
                 index === activePage
-                  ? "w-8 bg-teal-400"
+                  ? "w-8 bg-gold-400"
                   : "w-2 bg-white/25 hover:bg-white/40"
               }`}
             />
@@ -349,7 +349,7 @@ const Programs = () => {
         <p className="mt-6 text-center text-sm text-slate-500">
           <Link
             href="/Scholarships/NonD"
-            className="font-medium text-teal-400/90 underline-offset-4 transition hover:text-teal-300 hover:underline"
+            className="font-medium text-gold-400/90 underline-offset-4 transition hover:text-gold-300 hover:underline"
           >
             Search all programs
           </Link>

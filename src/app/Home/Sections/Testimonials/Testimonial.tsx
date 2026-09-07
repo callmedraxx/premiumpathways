@@ -81,7 +81,7 @@ const Testimonials = () => {
             >
               {testimonials.map((t) => (
                 <div key={t.id} className="min-w-full flex-shrink-0 px-1">
-                  <div className="overflow-hidden rounded-full ring-4 ring-teal-500/40 ring-offset-2 ring-offset-transparent mx-auto mb-5 h-24 w-24 sm:h-28 sm:w-28">
+                  <div className="overflow-hidden rounded-full ring-4 ring-gold-500/40 ring-offset-2 ring-offset-transparent mx-auto mb-5 h-24 w-24 sm:h-28 sm:w-28">
                     <Image
                       src={t.image}
                       alt=""
@@ -123,7 +123,7 @@ const Testimonials = () => {
                   onClick={() => setCurrentIndex(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? "w-6 bg-teal-400"
+                      ? "w-6 bg-gold-400"
                       : "w-2 bg-white/30 hover:bg-white/50"
                   }`}
                 />

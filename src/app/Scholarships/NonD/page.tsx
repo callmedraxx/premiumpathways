@@ -65,7 +65,7 @@ export default function NonD() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />
           <div className="relative z-10 pb-14 text-center px-4">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-400">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold-400">
               Language & Culture
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
@@ -93,7 +93,7 @@ export default function NonD() {
               {programs.map((program) => (
                 <div
                   key={program.id}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:border-teal-500/30 hover:bg-white/[0.07]"
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:border-gold-500/30 hover:bg-white/[0.07]"
                 >
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Image
@@ -112,19 +112,19 @@ export default function NonD() {
 
                     <div className="mt-3 flex-1 space-y-2">
                       <div className="flex items-center gap-2 text-sm text-slate-400">
-                        <i className="fas fa-award text-teal-400 w-4 text-center" aria-hidden />
+                        <i className="fas fa-award text-gold-400 w-4 text-center" aria-hidden />
                         {program.scholarship}
                       </div>
                       <div className="flex items-center gap-2 text-sm text-slate-400">
-                        <i className="fas fa-book-open text-teal-400 w-4 text-center" aria-hidden />
+                        <i className="fas fa-book-open text-gold-400 w-4 text-center" aria-hidden />
                         {program.major}
                       </div>
                       <div className="flex items-center gap-2 text-sm text-slate-400">
-                        <i className="fas fa-graduation-cap text-teal-400 w-4 text-center" aria-hidden />
+                        <i className="fas fa-graduation-cap text-gold-400 w-4 text-center" aria-hidden />
                         {program.degree}
                       </div>
                       <div className="flex items-center gap-2 text-sm text-slate-400">
-                        <i className="fas fa-map-marker-alt text-teal-400 w-4 text-center" aria-hidden />
+                        <i className="fas fa-map-marker-alt text-gold-400 w-4 text-center" aria-hidden />
                         {program.city}
                       </div>
                     </div>
@@ -132,7 +132,7 @@ export default function NonD() {
                     <button
                       type="button"
                       onClick={() => setModalUniversity(program.university)}
-                      className="mt-5 w-full rounded-xl bg-teal-500/15 py-2.5 text-sm font-semibold text-teal-300 ring-1 ring-teal-500/30 transition hover:bg-teal-500 hover:text-white"
+                      className="mt-5 w-full rounded-xl bg-gold-500/15 py-2.5 text-sm font-semibold text-gold-300 ring-1 ring-gold-500/30 transition hover:bg-gold-500 hover:text-white"
                     >
                       Apply Now
                     </button>
