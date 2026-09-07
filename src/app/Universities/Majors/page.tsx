@@ -1,189 +1,159 @@
-"use client";
-
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
-import WhatsAppWidget from "../../components/WhatsappWidget";
 import Image from "next/image";
+import Link from "next/link";
+import PageShell from "../../components/page/PageShell";
+import PageHero from "../../components/page/PageHero";
+import { Section, SectionHead } from "../../components/page/Section";
+import CtaBand from "../../components/page/CtaBand";
+import Reveal from "../../components/Reveal";
 
-const stats = [
-  { value: "11", label: "Major disciplines" },
-  { value: "71", label: "Secondary categories" },
-  { value: "250+", label: "Degree programs" },
+const counts = [
+  { value: "11", label: "major disciplines" },
+  { value: "71", label: "secondary categories" },
+  { value: "250+", label: "degree programs" },
 ];
 
+/* The four subject essays from the previous build, kept whole. */
 const subjects = [
   {
-    title: "Study MBBS in China",
-    label: "Medicine",
+    title: "MBBS in China",
     icon: "fa-stethoscope",
     image: "/img/doctor.jpeg",
-    body: "Studying MBBS in China is a cost-effective route to a world-class medical education. With government subsidies keeping tuition affordable, 45+ institutions — including Shihezi University, Qingdao University, and Dalian Medical University — are recognised by the WHO, China's Ministry of Education, and the Medical Council of India, offering fully English-taught programs.",
-    reverse: false,
+    alt: "A medical student in a white coat",
+    body: "Studying MBBS in China is a cost-effective route to a world-class medical education. With government subsidies keeping tuition affordable, 45+ institutions, including Shihezi University, Qingdao University and Dalian Medical University, are recognised by the WHO, China's Ministry of Education and the Medical Council of India, and offer fully English-taught programs.",
   },
   {
-    title: "Study Medicine in China",
-    label: "Clinical Medicine",
+    title: "Clinical medicine",
     icon: "fa-heartbeat",
     image: "/img/doctors.jpeg",
-    body: "Chinese medical education has attracted growing interest from students across Southeast Asia and beyond. A 5-year Bachelor of Medicine, Bachelor of Surgery (MBBS) track offers a fast-track path to clinical practice. Students also gain exposure to traditional Chinese medicine alongside Western approaches — a unique combination that broadens diagnostic capability and clinical perspective.",
-    reverse: true,
+    alt: "Doctors in consultation at a Chinese hospital",
+    body: "Chinese medical education has attracted growing interest from students across Africa, Southeast Asia and beyond. A five-year Bachelor of Medicine, Bachelor of Surgery track is a fast route to clinical practice. Students also gain exposure to traditional Chinese medicine alongside Western approaches, a combination that broadens diagnostic capability and clinical perspective.",
   },
   {
-    title: "Study Engineering in China",
-    label: "Engineering",
+    title: "Engineering",
     icon: "fa-cogs",
     image: "/img/majors-engineering.jpg",
-    body: "Engineering in China puts you at the centre of the world's most dynamic industrial landscape. As multinationals expand their Chinese operations, an engineering degree from a Chinese university opens doors to careers across manufacturing, technology, infrastructure, and research. China's global influence and vast engineering resources make it one of the strongest destinations for aspiring engineers worldwide.",
-    reverse: false,
+    alt: "Engineering students at work",
+    body: "Engineering in China puts you at the centre of the world's most dynamic industrial landscape. As multinationals expand their Chinese operations, an engineering degree from a Chinese university opens doors to careers across manufacturing, technology, infrastructure and research. China's global influence and vast engineering resources make it one of the strongest destinations for aspiring engineers.",
   },
   {
-    title: "Bachelor, Master & PhD Programs",
-    label: "All Degree Levels",
+    title: "Bachelor's, master's and PhD",
     icon: "fa-graduation-cap",
     image: "/img/grad.jpeg",
-    body: "Whether you are starting your undergraduate journey or pursuing a doctorate, Chinese universities accommodate every level. Many institutions offer accelerated pathways — Bachelor-to-Master or Master-to-PhD tracks — that reduce time-to-degree while maintaining academic rigour. With hundreds of programs taught in English and generous scholarship options, China is a compelling destination for students at any stage.",
-    reverse: true,
+    alt: "Graduates celebrating on a campus lawn",
+    body: "Whether you are starting your undergraduate journey or pursuing a doctorate, Chinese universities accommodate every level. Many institutions offer accelerated pathways, bachelor-to-master or master-to-PhD tracks, that reduce time-to-degree while maintaining academic rigour. With hundreds of programs taught in English and generous scholarship options, China is a compelling destination for students at any stage.",
   },
 ];
 
 export default function Majors() {
+  const [mbbs, clinical, engineering, levels] = subjects;
   return (
-    <div className="flex flex-col min-h-screen bg-slate-950">
-      <Header />
+    <PageShell>
+      <PageHero
+        image="/img/majors-hero.jpg"
+        alt="Students in a lecture theatre"
+        position="center 30%"
+        title="Find the major, then the university."
+        lede="Chinese universities teach an exceptional breadth of disciplines, most of them open to international students. Start with what you want to study; we will find where."
+      />
 
-      <main className="flex flex-1 flex-col">
-
-        {/* ── Hero ── */}
-        <section className="relative flex h-[420px] items-end justify-center overflow-hidden">
-          <Image
-            src="/img/majors-hero.jpg"
-            alt="University majors in China"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />
-          <div className="relative z-10 pb-14 text-center px-4">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold-400">
-              Explore Your Options
-            </p>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              University Majors
-            </h1>
-            <p className="mx-auto mt-4 max-w-xl text-slate-300">
-              Chinese universities offer an exceptional breadth of programs — find the discipline that fits your ambitions.
-            </p>
+      <Section>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-7">
+            <SectionHead title="What Chinese universities teach." />
+            <Reveal delay={0.1} className="mt-8 space-y-5 text-[1.05rem] leading-relaxed text-chalk/80">
+              <p>
+                Chinese universities span a remarkable range of disciplines: education, law, engineering, philosophy, economics, literature and more. With 11 major categories, 71 secondary categories and over 250 programs, your ideal major is almost certainly here.
+              </p>
+              <p>
+                Not yet decided? Many universities let you explore courses freely in your first year before committing to a field.
+              </p>
+            </Reveal>
           </div>
-        </section>
-
-        {/* ── Overview + Stats ── */}
-        <section className="bg-slate-900 px-4 py-16 sm:px-6 md:py-20">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">
-              Overview
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Majors of Chinese Universities
-            </h2>
-            <p className="mx-auto mt-5 max-w-3xl text-slate-300 leading-relaxed">
-              Chinese universities span a remarkable range of disciplines — Education, Law, Engineering, Philosophy, Economics, Literature, and more. With 11 major categories, 71 secondary categories, and over 250 programs, your ideal major is almost certainly here. Not yet decided? Many universities let you freely explore courses in your first year before committing to a field.
-            </p>
-
-            {/* Stats */}
-            <div className="mt-10 grid grid-cols-3 gap-4 sm:gap-8">
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-6"
-                >
-                  <p className="text-3xl font-bold text-gold-400 sm:text-4xl">{s.value}</p>
-                  <p className="mt-1 text-sm text-slate-400">{s.label}</p>
+          <Reveal from="up" delay={0.12} className="lg:col-span-4 lg:col-start-9">
+            <dl className="divide-y divide-chalk/10 border-t border-chalk/10">
+              {counts.map((c) => (
+                <div key={c.label} className="flex items-baseline justify-between gap-4 py-5">
+                  <dt className="text-sm text-chalk/60">{c.label}</dt>
+                  <dd className="font-display text-4xl font-semibold tracking-tight text-chalk sm:text-5xl">{c.value}</dd>
                 </div>
               ))}
+            </dl>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* Medicine: the two medical essays share one full-bleed composition. */}
+      <Section>
+        <SectionHead title="Medicine." lede="The field most Nigerian students ask us about first, and the one with the clearest route in." />
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-12 sm:gap-5">
+          <Reveal from="up" className="sm:col-span-7">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-card border border-chalk/[0.08] sm:aspect-[16/11]">
+              <Image src={mbbs.image} alt={mbbs.alt} fill sizes="(max-width: 640px) 100vw, 58vw" className="object-cover object-top" />
             </div>
-          </div>
-        </section>
-
-        {/* ── Subject sections ── */}
-        {subjects.map((s, i) => (
-          <section
-            key={s.title}
-            className={
-              i % 2 === 0
-                ? "bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-16 sm:px-6 md:py-20"
-                : "bg-slate-900 px-4 py-16 sm:px-6 md:py-20"
-            }
-          >
-            <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
-              {/* Text */}
-              <div className={s.reverse ? "lg:order-2" : "lg:order-1"}>
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400">
-                    <i className={`fas ${s.icon} text-sm`} aria-hidden />
-                  </span>
-                  <p className="text-sm font-semibold uppercase tracking-widest text-gold-400">
-                    {s.label}
-                  </p>
-                </div>
-                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  {s.title}
-                </h2>
-                <p className="mt-5 text-slate-300 leading-relaxed">{s.body}</p>
-                <a
-                  href="/About/Contact"
-                  className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold-500/15 px-5 py-2.5 text-sm font-semibold text-gold-300 ring-1 ring-gold-500/30 transition hover:bg-gold-500 hover:text-white"
-                >
-                  Enquire about this program
-                  <i className="fas fa-arrow-right text-xs" aria-hidden />
-                </a>
-              </div>
-
-              {/* Image */}
-              <div
-                className={`relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10 ${
-                  s.reverse ? "lg:order-1" : "lg:order-2"
-                }`}
-              >
-                <Image
-                  src={s.image}
-                  alt={s.title}
-                  fill
-                  className="object-cover transition duration-500 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 to-transparent" />
+          </Reveal>
+          <Reveal from="up" delay={0.08} className="sm:col-span-5">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-card border border-chalk/[0.08] sm:aspect-[4/5]">
+              <Image src={clinical.image} alt={clinical.alt} fill sizes="(max-width: 640px) 100vw, 42vw" className="object-cover object-top" />
+            </div>
+          </Reveal>
+          <Reveal from="up" delay={0.05} className="sm:col-span-6">
+            <div className="grid grid-cols-[3rem_1fr] gap-5 border-t border-chalk/10 pt-6">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full border border-ember/50 text-ember"><i className={`fas ${mbbs.icon} text-sm`} aria-hidden /></span>
+              <div>
+                <h3 className="display-md text-chalk">{mbbs.title}</h3>
+                <p className="mt-3 leading-relaxed text-chalk/70">{mbbs.body}</p>
               </div>
             </div>
-          </section>
-        ))}
-
-        {/* ── CTA ── */}
-        <section className="border-t border-white/5 bg-gradient-to-br from-slate-900 via-slate-800 to-gold-950 px-4 py-14 sm:px-6 md:py-16">
-          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-            <div className="max-w-xl space-y-3">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                Not sure which major is right for you?
-              </h2>
-              <p className="text-lg text-slate-300">
-                Our advisors will assess your background and match you with the programs best suited to your goals.
-              </p>
+          </Reveal>
+          <Reveal from="up" delay={0.1} className="sm:col-span-6">
+            <div className="grid grid-cols-[3rem_1fr] gap-5 border-t border-chalk/10 pt-6">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full border border-ember/50 text-ember"><i className={`fas ${clinical.icon} text-sm`} aria-hidden /></span>
+              <div>
+                <h3 className="display-md text-chalk">{clinical.title}</h3>
+                <p className="mt-3 leading-relaxed text-chalk/70">{clinical.body}</p>
+              </div>
             </div>
-            <a
-              href="/About/Contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-gold-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-gold-950/40 transition hover:bg-gold-400 whitespace-nowrap"
-            >
-              Get in touch
-              <i className="fas fa-arrow-right text-sm" aria-hidden />
-            </a>
+          </Reveal>
+        </div>
+        <Reveal from="up" delay={0.12} className="mt-10">
+          <Link href="/About/Contact" className="btn-ghost">Ask about medicine</Link>
+        </Reveal>
+      </Section>
+
+      {/* Engineering: one split. */}
+      <Section>
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center lg:gap-8">
+          <Reveal from="up" className="lg:col-span-6">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-card border border-chalk/[0.08]">
+              <Image src={engineering.image} alt={engineering.alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+            </div>
+          </Reveal>
+          <div className="lg:col-span-5 lg:col-start-8">
+            <Reveal as="h2" className="display-lg text-chalk">{engineering.title}.</Reveal>
+            <Reveal as="p" delay={0.08} className="mt-5 text-[1.05rem] leading-relaxed text-chalk/75">{engineering.body}</Reveal>
+            <Reveal delay={0.12} className="mt-8">
+              <Link href="/About/Contact" className="btn-ghost">Ask about engineering</Link>
+            </Reveal>
           </div>
-        </section>
+        </div>
+      </Section>
 
-      </main>
+      {/* Degree levels: stacked, full width, the photo underneath the words. */}
+      <Section>
+        <SectionHead title={`${levels.title}.`} lede={levels.body} />
+        <Reveal from="up" delay={0.1} className="mt-10">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-card border border-chalk/[0.08] sm:aspect-[21/9]">
+            <Image src={levels.image} alt={levels.alt} fill sizes="100vw" className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-night-950/80 via-transparent to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 flex flex-wrap gap-3 p-5 sm:p-8">
+              <Link href="/Scholarships/Phd" className="btn-ember">PhD scholarships</Link>
+              <Link href="/Scholarships/NonD" className="btn-ghost">Chinese language programs</Link>
+            </div>
+          </div>
+        </Reveal>
+      </Section>
 
-      <WhatsAppWidget
-        phoneNumber="+18683181079"
-        message="Hi, I would like to enquire about your services!"
-      />
-      <Footer height="300px" />
-    </div>
+      <CtaBand title="Not sure which major is right?" lede="An advisor will assess your background and match you with the programs best suited to your goals." />
+    </PageShell>
   );
 }

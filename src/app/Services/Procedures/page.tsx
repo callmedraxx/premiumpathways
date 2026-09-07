@@ -1,207 +1,117 @@
 "use client";
 
-import React from "react";
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
-import WhatsAppWidget from "../../components/WhatsappWidget";
-import Animate from "../../components/Animate";
 import Image from "next/image";
+import Link from "next/link";
+import { useRef } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import PageShell from "../../components/page/PageShell";
+import PageHero from "../../components/page/PageHero";
+import { Section, SectionHead } from "../../components/page/Section";
+import CtaBand from "../../components/page/CtaBand";
+import Reveal from "../../components/Reveal";
 
 const phases = [
   {
-    number: "01",
-    label: "Preparation",
-    title: "Prepare to Apply",
-    description:
-      "Before anything is submitted, we work closely with you to understand your goals, assess your profile, and map out the best path forward.",
+    title: "Prepare to apply",
+    description: "Before anything is submitted, we work with you to understand your goals, assess your profile, and map out the best path forward.",
     items: [
       { icon: "fa-comments", text: "One-to-one consultation" },
       { icon: "fa-chart-bar", text: "Free assessment of achievement" },
       { icon: "fa-university", text: "Universities matching" },
-      { icon: "fa-map", text: "Personalized study plan" },
+      { icon: "fa-map", text: "Personalised study plan" },
     ],
-    image: "proc-prepare.jpg",
+    image: "/img/proc-prepare.jpg",
     alt: "Student consultation session",
-    reverse: false,
   },
   {
-    number: "02",
-    label: "Application",
-    title: "Apply Process",
-    description:
-      "Once your plan is in place, we handle the heavy lifting — preparing your materials, submitting applications, and keeping you informed every step of the way.",
+    title: "Apply",
+    description: "Once your plan is in place, we do the heavy lifting: preparing your materials, submitting applications, and keeping you informed at every step.",
     items: [
       { icon: "fa-credit-card", text: "Service fee payment" },
-      { icon: "fa-file-alt", text: "Optimizing application materials" },
-      { icon: "fa-paper-plane", text: "University & scholarship application" },
+      { icon: "fa-file-alt", text: "Optimising application materials" },
+      { icon: "fa-paper-plane", text: "University and scholarship application" },
       { icon: "fa-search", text: "Tracking application progress" },
     ],
-    image: "proc-apply.jpg",
-    alt: "Student completing application",
-    reverse: true,
+    image: "/img/proc-apply.jpg",
+    alt: "Student completing an application",
   },
   {
-    number: "03",
-    label: "Admission",
     title: "Admission",
-    description:
-      "When decisions arrive, we guide you through the outcome — whether that means celebrating an offer, adjusting course, or preparing your next steps.",
+    description: "When decisions arrive, we guide you through the outcome: celebrating an offer, adjusting course if needed, or preparing your next steps.",
     items: [
       { icon: "fa-bell", text: "Inform admission result" },
-      { icon: "fa-sliders-h", text: "Major adjustment (if necessary)" },
+      { icon: "fa-sliders-h", text: "Major adjustment, if necessary" },
       { icon: "fa-envelope-open-text", text: "Sending admission notice" },
     ],
-    image: "proc-admission.jpg",
-    alt: "Student receiving admission",
-    reverse: false,
+    image: "/img/proc-admission.jpg",
+    alt: "Student receiving an admission letter",
   },
-] as const;
+];
 
 export default function Procedures() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 70%", "end 70%"] });
+  const line = useSpring(scrollYProgress, { stiffness: 80, damping: 24, mass: 0.4 });
+
   return (
-    <div className="flex flex-col min-h-screen bg-slate-950">
-      <Header />
-
-      <main className="flex flex-1 flex-col">
-        {/* ── Hero ── */}
-        <section className="relative flex h-[420px] items-end justify-center overflow-hidden">
-          <Image
-            src="/img/proc-hero.jpg"
-            alt="Applying to a Chinese university"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />
-          <div className="relative z-10 pb-14 text-center px-4">
-            <Animate variant="fade-down" delay={100}>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold-400">Step by Step</p>
-            </Animate>
-            <Animate variant="fade-up" delay={220}>
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Applying Procedures</h1>
-            </Animate>
-            <Animate variant="fade-up" delay={340}>
-              <p className="mx-auto mt-4 max-w-xl text-slate-300">
-                Everything you need to know about applying to a Chinese university — from first consultation to receiving your admission notice.
-              </p>
-            </Animate>
-          </div>
-        </section>
-
-        {/* ── Phase steps strip ── */}
-        <section className="bg-slate-900 border-b border-white/5 px-4 py-10 sm:px-6">
-          <div className="mx-auto max-w-3xl">
-            <div className="flex items-center justify-center gap-3 sm:gap-6">
-              {phases.map((phase, i) => (
-                <React.Fragment key={phase.number}>
-                  <div className="flex flex-col items-center text-center gap-2">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-500/15 text-gold-400 text-lg font-bold ring-1 ring-gold-500/30">
-                      {phase.number}
-                    </span>
-                    <p className="text-xs font-semibold uppercase tracking-widest text-gold-400 hidden sm:block">
-                      {phase.label}
-                    </p>
-                    <p className="text-sm font-semibold text-white">{phase.title}</p>
-                  </div>
-                  {i < phases.length - 1 && (
-                    <i className="fas fa-chevron-right text-white/20 text-lg flex-shrink-0 mb-6 sm:mb-8" aria-hidden />
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Phase detail sections ── */}
-        {phases.map((phase, i) => (
-          <section
-            key={phase.number}
-            className={
-              i % 2 === 0
-                ? "bg-slate-900 px-4 py-16 sm:px-6 md:py-20"
-                : "bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-16 sm:px-6 md:py-20"
-            }
-          >
-            <div
-              className={`mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 ${
-                phase.reverse ? "" : ""
-              }`}
-            >
-              {/* Text — left on desktop for even phases, right for odd */}
-              <Animate variant={phase.reverse ? "fade-right" : "fade-left"} className={phase.reverse ? "lg:order-2" : "lg:order-1"}>
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-500/15 text-sm font-bold text-gold-400 ring-1 ring-gold-500/30">
-                    {phase.number}
-                  </span>
-                  <p className="text-sm font-semibold uppercase tracking-widest text-gold-400">
-                    {phase.label}
-                  </p>
-                </div>
-                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  {phase.title}
-                </h2>
-                <p className="mt-4 text-slate-300 leading-relaxed">
-                  {phase.description}
-                </p>
-                <ul className="mt-6 space-y-3">
-                  {phase.items.map(({ icon, text }) => (
-                    <li key={text} className="flex items-center gap-3 text-slate-300">
-                      <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400">
-                        <i className={`fas ${icon} text-sm`} aria-hidden />
-                      </span>
-                      {text}
-                    </li>
-                  ))}
-                </ul>
-              </Animate>
-
-              {/* Image */}
-              <Animate
-                variant={phase.reverse ? "fade-left" : "fade-right"}
-                delay={120}
-                className={`relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10 ${
-                  phase.reverse ? "lg:order-1" : "lg:order-2"
-                }`}
-              >
-                <Image
-                  src={`/img/${phase.image}`}
-                  alt={phase.alt}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 to-transparent" />
-              </Animate>
-            </div>
-          </section>
-        ))}
-
-        {/* ── CTA ── */}
-        <section className="border-t border-white/5 bg-gradient-to-br from-slate-900 via-slate-800 to-gold-950 px-4 py-14 sm:px-6 md:py-16">
-          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-            <div className="max-w-xl space-y-3">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                Ready to start your application?
-              </h2>
-              <p className="text-lg text-slate-300">
-                Our team is ready to guide you through every step — from your first consultation to your first day on campus.
-              </p>
-            </div>
-            <a
-              href="/About/Contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-gold-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-gold-950/40 transition hover:bg-gold-400 whitespace-nowrap"
-            >
-              Get in touch
-              <i className="fas fa-arrow-right text-sm" aria-hidden />
-            </a>
-          </div>
-        </section>
-      </main>
-
-      <WhatsAppWidget
-        phoneNumber="+18683181079"
-        message="Hi, I would like to enquire about your services!"
+    <PageShell>
+      <PageHero
+        image="/img/proc-hero.jpg"
+        alt="A student preparing documents for a university application"
+        title="How applying works."
+        lede="Three phases from the first conversation to the admission notice in your hand. Here is exactly what happens in each, and what we do for you."
+        position="center 30%"
       />
-      <Footer height="300px" />
-    </div>
+
+      <Section>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-4">
+            <div className="lg:sticky lg:top-32">
+              <SectionHead title="The itinerary." lede="Follow the line. Every stop is a thing we do, not a thing you have to work out." />
+              <Reveal delay={0.14} className="mt-8 flex flex-wrap gap-3">
+                <Link href="/Services/Cost" className="btn-ghost">Fees and packages</Link>
+                <Link href="/Services/FAQ" className="btn-ghost">Questions answered</Link>
+              </Reveal>
+            </div>
+          </div>
+
+          <div ref={ref} className="relative lg:col-span-8">
+            <div className="absolute bottom-8 left-[1.35rem] top-8 w-px bg-chalk/12 sm:left-[1.6rem]" aria-hidden>
+              <motion.div className="h-full w-full origin-top bg-ember" style={{ scaleY: line }} />
+            </div>
+            <ol className="space-y-16 lg:space-y-24">
+              {phases.map((p, i) => (
+                <li key={p.title}>
+                  <Reveal from="up" className="grid grid-cols-[2.75rem_1fr] gap-5 sm:grid-cols-[3.25rem_1fr] sm:gap-7">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-ember/60 bg-night-950 text-ember sm:h-[3.25rem] sm:w-[3.25rem]">
+                      <i className={`fas ${i === 0 ? "fa-comments" : i === 1 ? "fa-paper-plane" : "fa-envelope-open-text"} text-sm sm:text-base`} aria-hidden />
+                    </span>
+                    <div>
+                      <h3 className="display-md text-chalk">{p.title}</h3>
+                      <p className="mt-3 max-w-[58ch] text-[1.02rem] leading-relaxed text-chalk/78">{p.description}</p>
+                      <div className="mt-6 grid gap-6 md:grid-cols-[1fr_15rem] md:items-start">
+                        <ul className="divide-y divide-chalk/10">
+                          {p.items.map((it) => (
+                            <li key={it.text} className="flex items-center gap-3 py-3 text-chalk/85">
+                              <i className={`fas ${it.icon} w-5 text-center text-xs text-ember`} aria-hidden />
+                              {it.text}
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-card border border-chalk/[0.08]">
+                          <Image src={p.image} alt={p.alt} fill sizes="(max-width: 768px) 100vw, 15rem" className="object-cover" />
+                        </div>
+                      </div>
+                    </div>
+                  </Reveal>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </Section>
+
+      <CtaBand title="Ready for the first stop?" lede="The consultation is free and the assessment is honest. Tell us where you are and what you want to study." />
+    </PageShell>
   );
 }
