@@ -1,219 +1,180 @@
 "use client";
 
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
-import WhatsAppWidget from "../../components/WhatsappWidget";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useState } from "react";
-import Animate from "../../components/Animate";
+import PageShell from "../../components/page/PageShell";
+import PageHero from "../../components/page/PageHero";
+import { Section, SectionHead } from "../../components/page/Section";
+import { Field, inputClass, textareaClass } from "../../components/page/Field";
+import Reveal from "../../components/Reveal";
+import { FLIGHT_KM, OFFICE } from "../../components/FlightMap";
 
-const contactDetails = [
-  {
-    icon: "fa-envelope",
-    label: "Email",
-    value: "premiumpathways78@gmail.com",
-    href: "mailto:premiumpathways78@gmail.com",
-  },
-  {
-    icon: "fab fa-whatsapp",
-    label: "WhatsApp",
-    value: "+1 868 318 1079",
-    href: "https://wa.me/18683181079",
-  },
-  {
-    icon: "fab fa-instagram",
-    label: "Instagram",
-    value: "@premiumpathways1",
-    href: "https://www.instagram.com/premiumpathways1/",
-  },
-  {
-    icon: "fa-map-marker-alt",
-    label: "Address",
-    value: "Beijing Road, Beijing, China",
-    href: null,
-  },
+const FlightMap = dynamic(() => import("../../components/FlightMap"), {
+  ssr: false,
+  loading: () => <div className="h-[26rem] animate-pulse rounded-card border border-chalk/[0.1] bg-night-900 sm:h-[32rem] lg:h-[36rem]" />,
+});
+
+const WA = "https://wa.me/18683181079?text=" + encodeURIComponent("Hi, I would like to enquire about your services!");
+const MAPS = `https://www.google.com/maps/search/?api=1&query=${OFFICE.lat},${OFFICE.lon}`;
+const DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${OFFICE.lat},${OFFICE.lon}`;
+
+const routes = [
+  { icon: "fab fa-whatsapp", label: "WhatsApp", value: "+1 868 318 1079", note: "Fastest. Replies same day.", href: WA, tint: "text-[#3fd36f]" },
+  { icon: "far fa-envelope", label: "Email", value: "premiumpathways78@gmail.com", note: "For documents and longer questions.", href: "mailto:premiumpathways78@gmail.com", tint: "text-ember" },
+  { icon: "fab fa-instagram", label: "Instagram", value: "@premiumpathways1", note: "Intakes and student stories.", href: "https://www.instagram.com/premiumpathways1/", tint: "text-chalk" },
 ];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const set = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setForm({ ...form, [e.target.name]: e.target.value });
+  const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    const { name, email, phone, message } = formData;
-    const subject = `Contact Request from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
+    const subject = `Contact Request from ${form.name}`;
+    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\n\nMessage:\n${form.message}`;
     window.location.href = `mailto:premiumpathways78@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
 
-  const inputClass =
-    "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-gold-500/50 focus:bg-white/10";
-
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
+    <PageShell>
+      <PageHero
+        image="/img/contact-hero.jpg"
+        alt="An advisor on a call with a student"
+        title="Talk to an advisor."
+        lede="One conversation is usually enough to know whether China is right for you, and which city and program fit. Reach us whichever way is easiest."
+        aside={
+          <ul className="grid gap-3">
+            {routes.map((r) => (
+              <li key={r.label}>
+                <a
+                  href={r.href} target={r.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
+                  className="panel group flex items-center gap-4 px-5 py-4 transition hover:border-chalk/25"
+                >
+                  <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-night-800 text-xl ${r.tint}`}>
+                    <i className={r.icon} aria-hidden />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm text-chalk/60">{r.label}</span>
+                    <span className="block break-all font-semibold text-chalk">{r.value}</span>
+                    <span className="mt-0.5 block text-xs text-chalk/50">{r.note}</span>
+                  </span>
+                  <i className="fas fa-arrow-right text-xs text-chalk/40 transition group-hover:translate-x-0.5 group-hover:text-ember" aria-hidden />
+                </a>
+              </li>
+            ))}
+          </ul>
+        }
+      />
 
-      <main className="flex flex-1 flex-col">
-
-        {/* ── Hero ── */}
-        <section className="relative flex h-[380px] items-end justify-center overflow-hidden">
-          <Image
-            src="/img/contact-hero.jpg"
-            alt="Contact Premium Pathways"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />
-          <div className="relative z-10 pb-14 text-center px-4">
-            <Animate variant="fade-down" delay={100}>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold-400">We&apos;re Here to Help</p>
-            </Animate>
-            <Animate variant="fade-up" delay={220}>
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Get in Touch</h1>
-            </Animate>
-            <Animate variant="fade-up" delay={340}>
-              <p className="mx-auto mt-4 max-w-xl text-slate-300">
-                Have a question or ready to start your journey? Send us a message and we&apos;ll get back to you promptly.
-              </p>
-            </Animate>
-          </div>
-        </section>
-
-        {/* ── Form + Details ── */}
-        <section className="bg-slate-900 px-4 py-16 sm:px-6 md:py-20">
-          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-5">
-
-            {/* Contact form — wider */}
-            <Animate variant="fade-left" className="lg:col-span-3">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
-                <h2 className="mb-1 text-2xl font-bold text-white">Send a message</h2>
-                <p className="mb-7 text-sm text-slate-400">Fill in the form and we&apos;ll respond within 24 hours.</p>
-
-                {sent ? (
-                  <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
-                    <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold-500/15 text-gold-400">
-                      <i className="fas fa-check text-2xl" aria-hidden />
-                    </span>
-                    <p className="text-lg font-semibold text-white">Message sent!</p>
-                    <p className="text-sm text-slate-400">Your email client should have opened. We&apos;ll be in touch soon.</p>
-                    <button
-                      onClick={() => { setSent(false); setFormData({ name: "", phone: "", email: "", message: "" }); }}
-                      className="mt-2 rounded-xl border border-white/10 bg-white/5 px-5 py-2.5 text-sm text-slate-300 transition hover:bg-white/10"
-                    >
-                      Send another
-                    </button>
+      <Section>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-7">
+            <SectionHead title="Or write to us here." lede="This opens your email app with the message ready to send. We reply within one working day." />
+            <Reveal from="up" delay={0.1} className="mt-10">
+              {sent ? (
+                <div className="panel flex flex-col items-start gap-4 p-8">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ember/15 text-ember"><i className="fas fa-check" aria-hidden /></span>
+                  <p className="display-md text-chalk">Your email app should be open.</p>
+                  <p className="text-chalk/70">If it did not open, write to premiumpathways78@gmail.com directly or use WhatsApp above.</p>
+                  <button type="button" onClick={() => { setSent(false); setForm({ name: "", phone: "", email: "", message: "" }); }} className="btn-ghost mt-2">Write another</button>
+                </div>
+              ) : (
+                <form onSubmit={submit} className="grid gap-5">
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <Field label="Full name" htmlFor="c-name">
+                      <input id="c-name" name="name" type="text" required autoComplete="name" placeholder="Adaeze Okafor" value={form.name} onChange={set} className={inputClass} />
+                    </Field>
+                    <Field label="Phone or WhatsApp" htmlFor="c-phone">
+                      <input id="c-phone" name="phone" type="tel" autoComplete="tel" placeholder="+234 803 000 0000" value={form.phone} onChange={set} className={inputClass} />
+                    </Field>
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div>
-                        <label className="mb-1.5 block text-xs font-medium text-slate-400">Full Name</label>
-                        <input type="text" name="name" required placeholder="Your full name" value={formData.name} onChange={handleChange} className={inputClass} />
-                      </div>
-                      <div>
-                        <label className="mb-1.5 block text-xs font-medium text-slate-400">Phone Number</label>
-                        <input type="tel" name="phone" placeholder="+1 234 567 8900" value={formData.phone} onChange={handleChange} className={inputClass} />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="mb-1.5 block text-xs font-medium text-slate-400">Email Address</label>
-                      <input type="email" name="email" required placeholder="your@email.com" value={formData.email} onChange={handleChange} className={inputClass} />
-                    </div>
-                    <div>
-                      <label className="mb-1.5 block text-xs font-medium text-slate-400">Message</label>
-                      <textarea name="message" required rows={5} placeholder="Tell us about your goals, the program you're interested in, or any questions you have..." value={formData.message} onChange={handleChange} className={inputClass} />
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full rounded-xl bg-gold-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-gold-950/40 transition hover:bg-gold-400"
-                    >
-                      Send Message
-                      <i className="fas fa-paper-plane ml-2 text-xs" aria-hidden />
-                    </button>
-                  </form>
-                )}
-              </div>
-            </Animate>
-
-            {/* Contact details — narrower */}
-            <Animate variant="fade-right" delay={120} className="lg:col-span-2 flex flex-col gap-5">
-
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
-                <h2 className="mb-6 text-xl font-bold text-white">Contact details</h2>
-                <ul className="space-y-5">
-                  {contactDetails.map((item) => (
-                    <li key={item.label} className="flex items-start gap-4">
-                      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400">
-                        <i className={`${item.icon.startsWith("fab") ? item.icon : `fas ${item.icon}`} text-sm`} aria-hidden />
-                      </span>
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">{item.label}</p>
-                        {item.href ? (
-                          <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="mt-0.5 text-sm text-white hover:text-gold-400 transition">
-                            {item.value}
-                          </a>
-                        ) : (
-                          <p className="mt-0.5 text-sm text-white">{item.value}</p>
-                        )}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Quick links */}
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <h3 className="mb-4 text-sm font-bold text-white">Quick links</h3>
-                <ul className="space-y-2">
-                  {[
-                    { label: "View applying procedures", href: "/Services/Procedures" },
-                    { label: "Read the FAQ", href: "/Services/FAQ" },
-                    { label: "Cost description", href: "/Services/Cost" },
-                    { label: "Browse top universities", href: "/Universities/Top" },
-                  ].map((link) => (
-                    <li key={link.href}>
-                      <a href={link.href} className="flex items-center gap-2 text-sm text-slate-400 transition hover:text-gold-400">
-                        <i className="fas fa-chevron-right text-[10px] text-gold-500/60" aria-hidden />
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Animate>
+                  <Field label="Email" htmlFor="c-email">
+                    <input id="c-email" name="email" type="email" required autoComplete="email" placeholder="you@example.com" value={form.email} onChange={set} className={inputClass} />
+                  </Field>
+                  <Field label="What do you want to study, and where are you now?" htmlFor="c-message" help="Your current level, the program you have in mind, and a rough budget help us answer properly.">
+                    <textarea id="c-message" name="message" required rows={6} placeholder="I finished WAEC in 2025 and want to study computer science, ideally in Beijing or Shanghai..." value={form.message} onChange={set} className={textareaClass} />
+                  </Field>
+                  <div>
+                    <button type="submit" className="btn-ember">Send message</button>
+                  </div>
+                </form>
+              )}
+            </Reveal>
           </div>
-        </section>
 
-        {/* ── Map ── */}
-        <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-16 sm:px-6 md:py-20">
-          <div className="mx-auto max-w-6xl">
-            <div className="mb-8 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gold-400">Location</p>
-              <h2 className="text-2xl font-bold text-white">Find us in Beijing</h2>
+          <Reveal from="up" delay={0.15} className="lg:col-span-4 lg:col-start-9">
+            <h3 className="display-md text-chalk">Good to have ready</h3>
+            <ul className="mt-6 divide-y divide-chalk/10">
+              {[
+                ["Your latest results", "WAEC, NECO, a bachelor's transcript, or whatever you have finished."],
+                ["A passport, or a plan for one", "You do not need it to talk to us. You will need it to apply."],
+                ["A program in mind", "Or a field. \"Something in engineering\" is enough to start."],
+                ["A budget range", "Scholarships change the answer, so tell us honestly."],
+              ].map(([t, d]) => (
+                <li key={t} className="py-4">
+                  <p className="font-semibold text-chalk">{t}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-chalk/65">{d}</p>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </Section>
+
+      <Section id="map">
+        <SectionHead title="From Lagos to our door." lede="The flight most of our students make, drawn on the map. Watch it land, then the map takes you to the office." />
+        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-12">
+          <Reveal from="up" className="lg:col-span-8">
+            <FlightMap />
+          </Reveal>
+          <Reveal from="up" delay={0.1} className="lg:col-span-4">
+            <div className="panel-solid flex h-full flex-col p-6 sm:p-7">
+              <p className="meta">Itinerary</p>
+              <ol className="mt-5 flex-1 space-y-6">
+                <li className="grid grid-cols-[2.25rem_1fr] gap-3">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-chalk/20 text-chalk/80"><i className="fas fa-plane-departure text-xs" aria-hidden /></span>
+                  <div>
+                    <p className="font-semibold text-chalk">Depart Lagos (LOS)</p>
+                    <p className="mt-1 text-sm leading-relaxed text-chalk/65">Murtala Muhammed International. Most students fly via Addis Ababa, Doha or Dubai.</p>
+                  </div>
+                </li>
+                <li className="grid grid-cols-[2.25rem_1fr] gap-3">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-chalk/20 text-chalk/80"><i className="fas fa-route text-xs" aria-hidden /></span>
+                  <div>
+                    <p className="font-semibold text-chalk">{FLIGHT_KM.toLocaleString("en-NG")} km as the crow flies</p>
+                    <p className="mt-1 text-sm leading-relaxed text-chalk/65">Over the Sahel, the Red Sea, the Arabian Sea and the Himalaya. Roughly a day door to door.</p>
+                  </div>
+                </li>
+                <li className="grid grid-cols-[2.25rem_1fr] gap-3">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-chalk/20 text-chalk/80"><i className="fas fa-plane-arrival text-xs" aria-hidden /></span>
+                  <div>
+                    <p className="font-semibold text-chalk">Arrive Beijing (PEK or PKX)</p>
+                    <p className="mt-1 text-sm leading-relaxed text-chalk/65">Daxing airport is the closer one to us: about 45 minutes by taxi.</p>
+                  </div>
+                </li>
+                <li className="grid grid-cols-[2.25rem_1fr] gap-3">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ember text-night-950"><i className="fas fa-map-marker-alt text-xs" aria-hidden /></span>
+                  <div>
+                    <p className="font-semibold text-chalk">{OFFICE.name}</p>
+                    <address className="mt-1 text-sm not-italic leading-relaxed text-chalk/65">
+                      {OFFICE.address}<br />{OFFICE.district}
+                    </address>
+                  </div>
+                </li>
+              </ol>
+              <div className="mt-7 flex flex-wrap gap-2">
+                <a href={MAPS} target="_blank" rel="noopener noreferrer" className="btn-ghost !px-4 !py-2.5 text-sm">
+                  <i className="fas fa-external-link-alt text-xs" aria-hidden /> Open in Google Maps
+                </a>
+                <a href={DIRECTIONS} target="_blank" rel="noopener noreferrer" className="btn-ghost !px-4 !py-2.5 text-sm">
+                  <i className="fas fa-directions text-xs" aria-hidden /> Directions
+                </a>
+              </div>
             </div>
-            <div className="overflow-hidden rounded-2xl ring-1 ring-white/10">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26245.472539801867!2d116.36357160000001!3d39.91217285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f0529d7f5f9c53%3A0x6b8b3dfbb8302c0!2sBeijing%2C%20China!5e0!3m2!1sen!2sus!4v1688656309834!5m2!1sen!2sus"
-                width="100%"
-                height="380"
-                loading="lazy"
-                title="Premium Pathways location"
-                className="block w-full grayscale"
-              />
-            </div>
-          </div>
-        </section>
-
-      </main>
-
-      <WhatsAppWidget phoneNumber="+18683181079" message="Hi, I would like to enquire about your services!" />
-      <Footer height="300px" />
-    </div>
+          </Reveal>
+        </div>
+      </Section>
+    </PageShell>
   );
 }
