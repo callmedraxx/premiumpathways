@@ -1,39 +1,35 @@
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-import Programs from "./Home/Sections/Programs/programs";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import ApplySection from "./Home/Sections/Apply/apply";
-import ChooseProgram from "./Home/Sections/ChooseProgram/choose";
-import StudyInChina from "./Home/Sections/First/Study";
-import PopularCities from "./Home/Sections/Popular/popular";
-import Testimonials from "./Home/Sections/Testimonials/Testimonial";
-import JoinCommunity from "./Home/Sections/Join/Join";
+import Hero from "./Home/sections/Hero";
+import Departure from "./Home/sections/Departure";
+import Programs from "./Home/sections/Programs";
+import Openings from "./Home/sections/Openings";
+import Itinerary from "./Home/sections/Itinerary";
+import Arrival from "./Home/sections/Arrival";
+import Voices from "./Home/sections/Voices";
+import Board from "./Home/sections/Board";
 import WhatsAppWidget from "./components/WhatsappWidget";
 
-
+/* The homepage is one flight, Lagos to Beijing, and the sections are laid
+   along it: departure at the top, arrival two thirds down, the seat at the
+   end. The globe behind the page (see components/three/Flight) is turned by
+   the same scroll position that brings each of these into view. */
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Header */}
+    <div className="flex min-h-screen flex-col">
       <Header />
-
-      {/* Main Content */}
       <main className="flex flex-1 flex-col">
-        <StudyInChina />
+        <Hero />
+        <Departure />
         <Programs />
-        <ChooseProgram />
-        <ApplySection />
-        <PopularCities />
-        <Testimonials />
-        <JoinCommunity />
-        {/* Add WhatsApp Widget */}
-       <WhatsAppWidget phoneNumber="+18683181079" message="Hi, I will like to Enquire about your Services!" />
+        <Openings />
+        <Itinerary />
+        <Arrival />
+        <Voices />
+        <Board />
+        <WhatsAppWidget phoneNumber="+18683181079" message="Hi, I will like to Enquire about your Services!" />
       </main>
-
-     {/* Footer with adjustable height */}
-     <Footer height="300px" />
+      <Footer />
     </div>
   );
 }
-
-

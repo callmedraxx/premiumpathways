@@ -1,72 +1,70 @@
 "use client";
 
-import { useState } from "react";
-import Menu from "@/app/components/Menu";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import Menu from "@/app/components/Menu";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [solid, setSolid] = useState(false);
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (y) => setSolid(y > 24));
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  useEffect(() => {
+    document.documentElement.style.overflow = open ? "hidden" : "";
+    return () => { document.documentElement.style.overflow = ""; };
+  }, [open]);
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full pt-[env(safe-area-inset-top,0px)]">
-      {/* Bar: glass + subtle gradient so it merges with hero instead of a hard strip */}
-      <div className="border-b border-white/[0.08] bg-gradient-to-b from-slate-950/85 via-slate-950/55 to-slate-950/25 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-slate-950/40">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8 md:h-[4.25rem]">
-          <Link
-            href="/"
-            className="flex shrink-0 items-center py-1 transition opacity-95 hover:opacity-100"
-            onClick={() => setMenuOpen(false)}
-          >
-            <Image
-              src="/img/prem.png"
-              alt="Premium Pathways"
-              width={140}
-              height={56}
-              className="h-11 w-auto sm:h-12 md:h-14"
-              priority
-            />
+    <header className="fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top,0px)]">
+      <div
+        className={`transition-colors duration-500 ${
+          solid || open ? "border-b border-chalk/[0.07] bg-night-950/80 backdrop-blur-xl" : "border-b border-transparent bg-transparent"
+        }`}
+      >
+        <div className="mx-auto flex h-[4.5rem] max-w-[1400px] items-center justify-between gap-6 px-5 sm:px-8">
+          <Link href="/" className="flex shrink-0 items-center" onClick={() => setOpen(false)} aria-label="Premium Pathways home">
+            <Image src="/img/prem.png" alt="Premium Pathways" width={140} height={76} priority className="h-12 w-auto md:h-[3.4rem]" />
           </Link>
+
+          <div className="hidden md:flex md:flex-1 md:items-center md:justify-end md:gap-4">
+            <Menu isMobile={false} />
+            <Link href="/About/Contact" className="btn-ember !px-5 !py-2.5 text-sm">
+              Talk to an advisor
+            </Link>
+          </div>
 
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 md:hidden"
-            onClick={toggleMenu}
-            aria-expanded={menuOpen}
-            aria-label="Toggle menu"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-chalk/15 bg-night-900/60 md:hidden"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-label={open ? "Close menu" : "Open menu"}
           >
-            <span className="relative flex h-3.5 w-5 flex-col justify-between">
-              <span
-                className={`block h-0.5 w-full rounded-full bg-white transition-transform ${
-                  menuOpen ? "translate-y-[6px] rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-full rounded-full bg-white transition ${
-                  menuOpen ? "scale-0 opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-full rounded-full bg-white transition-transform ${
-                  menuOpen ? "-translate-y-[6px] -rotate-45" : ""
-                }`}
-              />
+            <span className="relative flex h-3 w-5 flex-col justify-between">
+              <span className={`block h-[1.5px] w-full rounded-full bg-chalk transition-transform duration-300 ${open ? "translate-y-[5.5px] rotate-45" : ""}`} />
+              <span className={`block h-[1.5px] w-full rounded-full bg-chalk transition-transform duration-300 ${open ? "-translate-y-[5.5px] -rotate-45" : ""}`} />
             </span>
           </button>
-
-          <div className="hidden md:flex md:flex-1 md:justify-end">
-            <Menu isMobile={false} />
-          </div>
         </div>
       </div>
 
-      {menuOpen && (
-        <div className="border-b border-white/10 bg-slate-950/95 shadow-lg backdrop-blur-xl md:hidden">
-          <Menu isMobile={true} toggleMenu={toggleMenu} />
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="mobile-nav"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+            className="max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-b border-chalk/10 bg-night-950/95 backdrop-blur-xl md:hidden"
+          >
+            <Menu isMobile toggleMenu={() => setOpen(false)} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
