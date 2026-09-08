@@ -93,7 +93,7 @@ export default function Contact() {
                     <input id="c-email" name="email" type="email" required autoComplete="email" placeholder="you@example.com" value={form.email} onChange={set} className={inputClass} />
                   </Field>
                   <Field label="What do you want to study, and where are you now?" htmlFor="c-message" help="Your current level, the program you have in mind, and a rough budget help us answer properly.">
-                    <textarea id="c-message" name="message" required rows={6} placeholder="I finished WAEC in 2025 and want to study computer science, ideally in Beijing or Shanghai..." value={form.message} onChange={set} className={textareaClass} />
+                    <textarea id="c-message" name="message" required rows={6} placeholder="I finished WAEC in 2026 and want to study computer science, ideally in Beijing or Shanghai..." value={form.message} onChange={set} className={textareaClass} />
                   </Field>
                   <div>
                     <button type="submit" className="btn-ember">Send message</button>
