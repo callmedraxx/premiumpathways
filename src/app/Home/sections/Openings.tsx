@@ -8,8 +8,8 @@ import AdmissionModal from "../../components/AdmissionModal";
    actually filling this intake. Printed as boarding passes, because that is
    what an admission letter turns into. */
 const openings = [
-  { university: "Dali University", major: "Computer Science", city: "Dali", language: "English", duration: "4 years", degree: "Bachelor's", start: "September 2025", deadline: "December 2025", tuition: "" },
-  { university: "Beijing Wuzi University", major: "Business Administration", city: "Beijing", language: "Chinese", duration: "1 + 4 years", degree: "Bachelor's", start: "January 2025", deadline: "30 July", tuition: "$18,000" },
+  { university: "Dali University", major: "Computer Science", city: "Dali", language: "English", duration: "4 years", degree: "Bachelor's", start: "September 2027", deadline: "December 2027", tuition: "" },
+  { university: "Beijing Wuzi University", major: "Business Administration", city: "Beijing", language: "Chinese", duration: "1 + 4 years", degree: "Bachelor's", start: "January 2027", deadline: "30 July", tuition: "$18,000" },
   { university: "Huaihua University", major: "Chinese Language", city: "Huaihua", language: "Chinese", duration: "4 years", degree: "Bachelor's", start: "Every September", deadline: "15 August", tuition: "$18,000" },
   { university: "Dalian Jiaotong University", major: "Mechanical Engineering", city: "Dalian", language: "Chinese", duration: "3 years", degree: "Master's", start: "Every September", deadline: "30 March", tuition: "" },
   { university: "Hainan Normal University", major: "Computer Science and Technology", city: "Haikou", language: "Chinese", duration: "4 years", degree: "Bachelor's", start: "Every September", deadline: "30 June", tuition: "" },
